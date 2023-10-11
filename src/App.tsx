@@ -1,13 +1,20 @@
-import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Headphones from "./pages/Headphones";
+import Speakers from "./pages/Speakers";
+import Earphones from "./pages/Earphones";
 
 const App = () => {
   return (
     <div className="w-full h-screen">
-      <div className="bg-black">
-        <Navbar />
-        <Home />
-      </div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/headphones" element={<Headphones />}></Route>
+        <Route path="/speakers" element={<Speakers />}></Route>
+        <Route path="/earphones" element={<Earphones />}></Route>
+      </Routes>
     </div>
   );
 };
