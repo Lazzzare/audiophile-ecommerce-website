@@ -1,34 +1,58 @@
+import Hamburger from "../images/shared/tablet/icon-hamburger.svg";
 import Logo from "../images/shared/audiophile-logo.svg";
 import Cart from "../images/shared/icon-cart.svg";
-import Hamburger from "../images/shared/tablet/icon-hamburger.svg";
-// import Close from "../images/shared/tablet/icon-close-menu.svg";
+import { Link } from "react-router-dom";
 
-const menuItemsArray = ["Home", "HEADPHONES", "SPEAKERS", "EARPHONES"];
+const menuListArray = [
+  {
+    id: 1,
+    title: "Home",
+    to: "/",
+  },
+  {
+    id: 2,
+    title: "Headphones",
+    to: "/headphones",
+  },
+  {
+    id: 3,
+    title: "Speakers",
+    to: "/speakers",
+  },
+  {
+    id: 4,
+    title: "Earphones",
+    to: "/earphones",
+  },
+];
 
 const Navbar = () => {
   return (
     <>
-      <div className="flex items-center  justify-between px-6 py-9 bg-black max-w-[1110px] mx-auto">
-        <div className="flex items-center md:gap-10 gap-0 w-full lg:w-fit">
-          <img
-            src={Hamburger}
-            alt="Hamburger"
-            className="cursor-pointer lg:hidden"
-          />
-          <img
-            src={Logo}
-            alt="Logo"
-            className="cursor-pointer items-center mx-auto md:mx-0"
-          />
-        </div>
-        <ul className="hidden lg:flex justify-center mx-auto gap-8 items-center text-white">
-          {menuItemsArray.map((item, index) => {
-            return <li key={index}>={item}</li>;
+      <div className="w-full flex justify-between items-center bg-black px-6 md:px-[39px] lg:px-[165px] py-8 lg:py-9">
+        <img
+          src={Hamburger}
+          alt="Hamburger"
+          className="lg:hidden cursor-pointer"
+        />
+        <img src={Logo} alt="Logo" className="cursor-pointer" />
+        <ul className="text-white hidden lg:flex items-center gap-8">
+          {menuListArray.map((item) => {
+            return (
+              <li
+                key={item.id}
+                className="text-[13px] font-bold leading-6 tracking-[2px] uppercase cursor-pointer"
+              >
+                <Link to={item.to}>{item.title}</Link>
+              </li>
+            );
           })}
         </ul>
         <img src={Cart} alt="Cart" className="cursor-pointer" />
       </div>
-      <hr className="w-full h-[1px] text-white bg-white md:w-full mx-auto lg:w-[1110px]" />
+      <div className="md:px-[39px] lg:px-[165px]">
+        <div className="w-full bg-orange h-[10px]"></div>
+      </div>
     </>
   );
 };
