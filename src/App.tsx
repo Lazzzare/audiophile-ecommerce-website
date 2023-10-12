@@ -7,7 +7,7 @@ import Earphones from "./pages/Earphones";
 
 const App = () => {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-screen overflow-x-hidden">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
