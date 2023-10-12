@@ -2,7 +2,7 @@ import HeaderImage from "../images/home/desktop/headphone-hero-image.png";
 const HomeHero = () => {
   return (
     <div className="bg-black">
-      <div className="lg:w-[1440px] lg:mx-auto bg-black flex flex-row justify-between lg:px-[165px]">
+      <div className="lg:max-w-[1440px] lg:mx-auto bg-black flex flex-row justify-between lg:px-[165px]">
         <div className="bg lg:bg-none w-full py-[108px] flex lg:flex-row lg:w-full justify-center lg:justify-between items-center mx-auto lg:mx-0 px-6 text-center bg-black">
           <div className="flex flex-col text-whiteSmoke text-center items-center lg:text-left lg:items-start">
             <h3 className="text-sm tracking-[10px] opacity-40 mb-4">
@@ -19,7 +19,7 @@ const HomeHero = () => {
               See Product
             </button>
           </div>
-          <div className="">
+          <div className="lg:min-w-[442px]">
             <img
               src={HeaderImage}
               alt="HeaderImage"
