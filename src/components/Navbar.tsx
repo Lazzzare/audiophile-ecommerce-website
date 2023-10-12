@@ -29,7 +29,7 @@ const menuListArray = [
 const Navbar = () => {
   return (
     <div className="bg-black">
-      <div className="lg:w-[1440px] flex lg:mx-auto justify-between items-center bg-black px-6 md:px-[39px] lg:px-[165px] py-8 lg:py-9">
+      <div className="lg:max-w-[1440px] flex lg:mx-auto justify-between items-center bg-black px-6 md:px-[39px] lg:px-[165px] py-8 lg:py-9">
         <img
           src={Hamburger}
           alt="Hamburger"
@@ -50,8 +50,8 @@ const Navbar = () => {
         </ul>
         <img src={Cart} alt="Cart" className="cursor-pointer" />
       </div>
-      <div className="md:px-[39px] lg:px-[165px]">
-        <div className="w-full bg-white h-[1px]"></div>
+      <div className="md:px-[39px] lg:px-[165px] lg:max-w-[1440px] lg:mx-auto">
+        <div className="w-full bg-white h-[1px] opacity-20"></div>
       </div>
     </div>
   );
