@@ -3,26 +3,34 @@ import SecondSpeaker from "../images/home/mobile/image-speaker-zx7.jpg";
 import Earphones from "../images/home/mobile/image-earphones-yx1.jpg";
 import TabletSpeaker from "../images/home/tablet/image-speaker-zx7.jpg";
 import TabletEarphones from "../images/home/tablet/image-earphones-yx1.jpg";
+import DesktopFirstSpeaker from "../images/home/desktop/image-speaker-zx9.png";
+import DesktopSecondSpeaker from "../images/home/desktop/image-speaker-zx7.jpg";
+import DesktopEarphones from "../images/home/desktop/image-earphones-yx1.jpg";
 
 const HomeProducts = () => {
   return (
     <div className="p-6 space-y-6 flex flex-col mx-auto justify-center items-center">
       {/* First Speaker Product */}
-      <div className="w-[327px] h-[600px] md:w-[689px] md:h-[720px] rounded-lg bg-orange">
-        <div className="relative flex mx-auto items-center justify-center mt-14">
+      <div className="relative w-[327px] h-[600px] md:w-[689px] md:h-[720px] lg:w-[1110px] lg:h-[560px] flex flex-col lg:flex-row lg:justify-center lg:items-center rounded-lg bg-orange">
+        <div className="relative flex mx-auto items-center justify-center mt-14 lg:mt-[110px]">
           <img
             src={FirstSpeaker}
             alt="Speaker"
-            className="w-[170px] h-[207px]"
+            className="w-[170px] h-[207px] lg:hidden"
+          />
+          <img
+            src={DesktopFirstSpeaker}
+            alt="DesktopFirstSpeaker"
+            className="hidden lg:flex w-[383px] h-[450px] z-10"
           />
           {/* Circles */}
           <div className="absolute w-[558px] h-[558px] md:w-[944px] md:h-[944px] rounded-full border-2 border-white opacity-20"></div>
           <div className="absolute w-[320px] h-[320px] md:w-[542px] md:h-[542px] rounded-full border-2 border-white opacity-20"></div>
           <div className="absolute w-[279px] h-[279px] md:w-[472px] md:h-[472px] rounded-full border-2 border-white opacity-20"></div>
         </div>
-        <div className="mt-8 md:mt-16 space-y-6 flex flex-col items-center text-center mx-auto">
+        <div className="mt-8 md:mt-16 space-y-6 flex flex-col items-center text-center lg:items-stretch lg:text-left mx-auto z-10">
           <h1
-            className="text-4xl md:text-[56px] md:w-[261px] text-white font-bold leading-10 md:leading-[58px] tracking-[1.3px]
+            className="text-4xl md:text-[56px] lg:text-[58px] md:w-[261px] text-white font-bold leading-10 md:leading-[58px] tracking-[1.3px]
           md:tracking-[2px]"
           >
             ZX9 SPEAKER
@@ -31,13 +39,13 @@ const HomeProducts = () => {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <button className="text-white px-[30px] py-[15px] bg-black w-[160px]">
+          <button className="text-white w-[160px] py-[15px] bg-black tracking-[1px] font-bold text-[13px] uppercase">
             See Product
           </button>
         </div>
       </div>
       {/* Second Speaker Product */}
-      <div className="relative w-[327px] h-[320px] md:w-[689px] md:h-[320px] rounded-lg">
+      <div className="relative w-[327px] h-[320px] md:w-[689px] md:h-[320px] lg:w-[1110px]  rounded-lg">
         {/* <div className="rounded-lg"> */}
         <img
           src={SecondSpeaker}
@@ -47,10 +55,15 @@ const HomeProducts = () => {
         <img
           src={TabletSpeaker}
           alt="TabletSpeaker"
-          className="hidden md:flex rounded-lg"
+          className="hidden md:flex lg:hidden rounded-lg"
+        />
+        <img
+          src={DesktopSecondSpeaker}
+          alt="DesktopSecondSpeaker"
+          className="hidden md:hidden lg:flex rounded-lg"
         />
         {/* </div> */}
-        <div className="absolute top-[30%] left-6 md:left-[62px] flex flex-col gap-8">
+        <div className="absolute top-[30%] left-6 md:left-[62px] lg:left-[100px] flex flex-col gap-8">
           <h1 className="text-black text-[28px] font-bold tracking-[2px]">
             ZX7 SPEAKER
           </h1>
@@ -74,13 +87,18 @@ const HomeProducts = () => {
           <img
             src={TabletEarphones}
             alt="TabletEarphones"
-            className="hidden md:flex w-[339px] h-[320px] rounded-lg"
+            className="hidden lg:hidden md:flex w-[339px] h-[320px] rounded-lg"
+          />
+          <img
+            src={DesktopEarphones}
+            alt="DesktopEarphones"
+            className="hidden md:hidden lg:flex w-[540px] rounded-lg"
           />
         </div>
         {/* Text */}
         <div
-          className="w-[337px] h-[200px] md:w-[339px] md:h-[320px] rounded-lg bg-silver py-[41px] 
-        md:py-[101px] pl-[25px] md:pl-[41px] space-y-8"
+          className="w-[337px] h-[200px] md:w-[339px] md:h-[320px] lg:w-[540px] rounded-lg bg-silver py-[41px] 
+        md:py-[101px] pl-[25px] lg:pl-[95px] md:pl-[41px] space-y-8"
         >
           <h1 className="text-black text-[28px] font-bold tracking-[2px]">
             YX1 EARPHONES
