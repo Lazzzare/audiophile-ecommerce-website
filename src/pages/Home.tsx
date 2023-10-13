@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import FooterHero from "../components/FooterHero";
 import HomeHero from "../components/HomeHero";
 import HomeProducts from "../components/HomeProducts";
@@ -10,6 +11,7 @@ const Home = () => {
       <HomeShop />
       <HomeProducts />
       <FooterHero />
+      <Footer />
     </div>
   );
 };
