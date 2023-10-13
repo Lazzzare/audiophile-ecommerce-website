@@ -2,29 +2,7 @@ import Hamburger from "../images/shared/tablet/icon-hamburger.svg";
 import Logo from "../images/shared/audiophile-logo.svg";
 import Cart from "../images/shared/icon-cart.svg";
 import { Link } from "react-router-dom";
-
-const menuListArray = [
-  {
-    id: 1,
-    title: "Home",
-    to: "/",
-  },
-  {
-    id: 2,
-    title: "Headphones",
-    to: "/headphones",
-  },
-  {
-    id: 3,
-    title: "Speakers",
-    to: "/speakers",
-  },
-  {
-    id: 4,
-    title: "Earphones",
-    to: "/earphones",
-  },
-];
+import { menuListArray } from "../components/menuListArray";
 
 const Navbar = () => {
   return (
