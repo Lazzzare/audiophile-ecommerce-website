@@ -6,7 +6,7 @@ import Shadow from "../images/shared/shadow.png";
 
 const HomeShop = () => {
   return (
-    <div className="mt-20 md:mt-36 lg:px-[165px] mb-[120px] space-y-[75px] md:space-y-0 flex-col flex md:flex-row items-center">
+    <div className="mt-20 md:mt-36 lg:mx-auto lg:w-[1110px] mb-[120px] space-y-[75px] md:space-y-0 flex-col flex md:flex-row items-center">
       {/* Headphones */}
       <div className="w-[327px] h-[165px] md:w-[223px] lg:w-[350px] lg:h-[204px] rounded-lg bg-silver mx-auto flex flex-col items-center justify-center">
         <div className="flex-col mt-[-4rem] lg:mt-[-7rem]">
