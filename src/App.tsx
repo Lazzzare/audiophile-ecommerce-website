@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div
       className={`w-full h-screen overflow-x-hidden ${
-        mobileMenu ? "overflow-hidden" : null
+        mobileMenu ? "overflow-hidden" : "overflow-scroll"
       }`}
     >
       <Navbar mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
