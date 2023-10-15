@@ -39,7 +39,7 @@ const HomeProducts = () => {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <button className="text-white w-[160px] py-[15px] bg-black tracking-[1px] font-bold text-[13px] uppercase">
+          <button className="text-white w-[160px] py-[15px] bg-black hover:bg-[#4C4C4C] duration-500 tracking-[1px] font-bold text-[13px] uppercase">
             See Product
           </button>
         </div>
@@ -68,7 +68,7 @@ const HomeProducts = () => {
             ZX7 SPEAKER
           </h1>
           <button
-            className="bg-repeat-space border-[1px] border-black w-[160px] text-black font-bold py-[15px]
+            className="bg-repeat-space  w-[160px] border-[1px] border-black text-black hover:bg-black hover:text-whiteSmoke duration-500 font-bold py-[15px]
           text-[13px] tracking-[1px] uppercase"
           >
             See Product
@@ -97,14 +97,14 @@ const HomeProducts = () => {
         </div>
         {/* Text */}
         <div
-          className="w-[337px] h-[200px] md:w-[339px] md:h-[320px] lg:w-[540px] rounded-lg bg-silver py-[41px] 
+          className="w-[337px] h-[200px] md:w-[339px] md:h-[320px] lg:w-[540px] rounded-lg bg-silver py-[41px]
         md:py-[101px] pl-[25px] lg:pl-[95px] md:pl-[41px] space-y-8"
         >
           <h1 className="text-black text-[28px] font-bold tracking-[2px]">
             YX1 EARPHONES
           </h1>
           <button
-            className="bg-repeat-space border-[1px] border-black w-[160px] text-black font-bold py-[15px]
+            className="bg-repeat-space border-[1px] border-black w-[160px] text-black hover:bg-black hover:text-whiteSmoke duration-500 font-bold py-[15px]
             text-[13px] tracking-[1px] uppercase"
           >
             See Product
