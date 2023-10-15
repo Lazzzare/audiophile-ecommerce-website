@@ -8,7 +8,7 @@ const HomeShop = () => {
       {products.map((product, index) => (
         <div
           key={index}
-          className="w-[327px] h-[165px] md:w-[223px] lg:w-[350px] lg:h-[204px] rounded-lg bg-silver mx-auto flex flex-col items-center justify-center"
+          className="w-[327px] h-[165px] md:w-[223px] lg:w-[350px] lg:h-[204px] rounded-lg bg-silver mx-auto flex flex-col items-center justify-center cursor-pointer"
         >
           <div className="flex-col mt-[-4rem] lg:mt-[-7rem]">
             <img
@@ -27,7 +27,7 @@ const HomeShop = () => {
               {product.title}
             </h1>
             <div className="flex gap-3 items-center mx-auto justify-center cursor-pointer">
-              <h2 className="text-black text-[13px] font-bold tracking-[1px] uppercase opacity-50 z-10">
+              <h2 className="text-black hover:text-orange hover:opacity-100 duration-400 text-[13px] font-bold tracking-[1px] uppercase opacity-50 z-10">
                 SHOP
               </h2>
               <img src={Arrow} alt="Arrow" />
