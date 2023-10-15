@@ -5,7 +5,12 @@ import Facebook from "../images/shared/desktop/icon-facebook.svg";
 import Instagram from "../images/shared/desktop/icon-instagram.svg";
 import Twitter from "../images/shared/desktop/icon-twitter.svg";
 
-const Footer = () => {
+interface Props {
+  activeMenuRoute: number | null;
+  setActiveMenuRoute: (e: number) => void;
+}
+
+const Footer = ({ activeMenuRoute, setActiveMenuRoute }: Props) => {
   return (
     <div className="bg-black">
       <div className="relative bg-black px-6 md:px-10 lg:max-w-[1110px] pt-[52px] pb-[38px] flex flex-col mx-auto gap-y-10 md:gap-y-8">
@@ -18,11 +23,16 @@ const Footer = () => {
           {/* MenuItems */}
           <div className="">
             <ul className="text-white flex flex-col md:flex-row items-center md:items-stretch gap-4">
-              {menuListArray.map((item) => {
+              {menuListArray.map((item, index) => {
                 return (
                   <li
+                    onClick={() => {
+                      setActiveMenuRoute(index);
+                    }}
                     key={item.id}
-                    className="text-[13px] font-bold leading-6 tracking-[2px] uppercase cursor-pointer hover:text-orange transition-all duration-400"
+                    className={`${
+                      index === activeMenuRoute ? "text-orange" : ""
+                    } text-[13px] font-bold leading-6 tracking-[2px] uppercase cursor-pointer hover:text-orange transition-all duration-400`}
                   >
                     <Link to={item.to}>{item.title}</Link>
                   </li>
