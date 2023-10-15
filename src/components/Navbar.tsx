@@ -11,9 +11,16 @@ import Products from "./Products";
 interface Props {
   mobileMenu: boolean;
   setMobileMenu: (e: boolean) => void;
+  activeMenuRoute: number | null;
+  setActiveMenuRoute: (e: number) => void;
 }
 
-const Navbar = ({ mobileMenu, setMobileMenu }: Props) => {
+const Navbar = ({
+  mobileMenu,
+  setMobileMenu,
+  activeMenuRoute,
+  setActiveMenuRoute,
+}: Props) => {
   return (
     <div className="bg-black">
       <div className="lg:max-w-[1440px] flex lg:mx-auto justify-between items-center bg-black px-6 md:px-[39px] lg:px-[165px] py-8 lg:py-9">
@@ -73,11 +80,16 @@ const Navbar = ({ mobileMenu, setMobileMenu }: Props) => {
         ) : null}
         <img src={Logo} alt="Logo" className="cursor-pointer z-30" />
         <ul className="text-white hidden lg:flex items-center gap-8">
-          {menuListArray.map((item) => {
+          {menuListArray.map((item, index) => {
             return (
               <li
+                onClick={() => {
+                  setActiveMenuRoute(index);
+                }}
                 key={item.id}
-                className="text-[13px] font-bold leading-6 tracking-[2px] uppercase cursor-pointer hover:text-orange transition-all duration-400"
+                className={`${
+                  index === activeMenuRoute ? "text-orange" : ""
+                } text-[13px] font-bold leading-6 tracking-[2px] uppercase cursor-pointer hover:text-orange transition-all duration-400`}
               >
                 <Link to={item.to}>{item.title}</Link>
               </li>
