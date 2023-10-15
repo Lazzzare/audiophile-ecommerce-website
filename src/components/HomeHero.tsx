@@ -15,7 +15,7 @@ const HomeHero = () => {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <button className="w-[160px] flex lg:mx-0 justify-center items-center text-center mx-auto py-[15px] px-7 bg-orange text-[13px] tracking-[1px] font-bold uppercase">
+            <button className="w-[160px] flex lg:mx-0 justify-center items-center text-center mx-auto py-[15px] px-7 bg-orange hover:bg-lightOrange duration-500 text-[13px] tracking-[1px] font-bold uppercase">
               See Product
             </button>
           </div>
