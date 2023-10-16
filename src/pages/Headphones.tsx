@@ -1,16 +1,26 @@
-// import Footer from "../components/Footer";
-// import FooterHero from "../components/FooterHero";
-// import HomeShop from "../components/HomeShop";
+import Footer from "../components/Footer";
+import FooterHero from "../components/FooterHero";
+import HomeShop from "../components/HomeShop";
 
+import HeadphonesProduct from "../components/HeadphonesProduct";
 import HeadphonesTitle from "../components/HeadphonesTitle";
 
-const Headphones = () => {
+interface Props {
+  activeMenuRoute: number | null;
+  setActiveMenuRoute: (e: number) => void;
+}
+
+const Headphones = ({ activeMenuRoute, setActiveMenuRoute }: Props) => {
   return (
     <div className="">
       <HeadphonesTitle />
-      {/* <HomeShop />
+      <HeadphonesProduct />
+      <HomeShop />
       <FooterHero />
-      <Footer /> */}
+      <Footer
+        activeMenuRoute={activeMenuRoute}
+        setActiveMenuRoute={setActiveMenuRoute}
+      />
     </div>
   );
 };
