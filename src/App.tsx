@@ -31,7 +31,15 @@ const App = () => {
             />
           }
         ></Route>
-        <Route path="/headphones" element={<Headphones />}></Route>
+        <Route
+          path="/headphones"
+          element={
+            <Headphones
+              activeMenuRoute={activeMenuRoute}
+              setActiveMenuRoute={setActiveMenuRoute}
+            />
+          }
+        ></Route>
         <Route path="/speakers" element={<Speakers />}></Route>
         <Route path="/earphones" element={<Earphones />}></Route>
       </Routes>
