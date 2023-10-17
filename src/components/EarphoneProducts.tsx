@@ -1,5 +1,4 @@
 import YX1 from "../images/product-yx1-earphones/mobile/image-product.jpg";
-import YX1Tablet from "../images/product-yx1-earphones/tablet/image-product.jpg";
 import YX1Desktop from "../images/product-yx1-earphones/desktop/image-product.jpg";
 
 const EarphoneProducts = () => {
@@ -7,11 +6,6 @@ const EarphoneProducts = () => {
     <div className="px-6 md:px-10 pt-16 lg:pt-[160px] lg:max-w-[1110px] lg:mx-auto lg:px-0">
       <div className="mx-auto flex flex-col lg:flex-row lg:gap-x-[125px] lg:text-start lg:justify-start justify-center text-center items-center">
         <img src={YX1} alt="YX1" className="mb-8 flex lg:hidden" />
-        {/* <img
-          src={YX1Tablet}
-          alt="YX1"
-          className="mb-8 hidden md:flex lg:hidden"
-        /> */}
         <img
           src={YX1Desktop}
           alt="YX1"
