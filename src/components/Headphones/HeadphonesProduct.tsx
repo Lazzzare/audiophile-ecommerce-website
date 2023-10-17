@@ -1,9 +1,10 @@
-import XX99Mark2Mobile from "../images/product-xx99-mark-two-headphones/mobile/image-product.jpg";
-import XX99Mark1Mobile from "../images/product-xx99-mark-one-headphones/mobile/image-product.jpg";
-import XX59Mobile from "../images/product-xx59-headphones/mobile/image-product.jpg";
-import XX99Mark2Tablet from "../images/product-xx99-mark-two-headphones/tablet/image-product.jpg";
-import XX99MARK1Tablet from "../images/product-xx99-mark-one-headphones/tablet/image-product.jpg";
-import XX59Tablet from "../images/product-xx59-headphones/tablet/image-product.jpg";
+import XX99Mark2Mobile from "../../images/product-xx99-mark-two-headphones/mobile/image-product.jpg";
+import XX99Mark1Mobile from "../../images/product-xx99-mark-one-headphones/mobile/image-product.jpg";
+import XX59Mobile from "../../images/product-xx59-headphones/mobile/image-product.jpg";
+import XX99Mark2Tablet from "../../images/product-xx99-mark-two-headphones/tablet/image-product.jpg";
+import XX99MARK1Tablet from "../../images/product-xx99-mark-one-headphones/tablet/image-product.jpg";
+import XX59Tablet from "../../images/product-xx59-headphones/tablet/image-product.jpg";
+import { Link } from "react-router-dom";
 
 const products = [
   {
@@ -12,6 +13,7 @@ const products = [
     title: "XX99 Mark II Headphones",
     content:
       "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
+    link: "/headphones/product1",
   },
   {
     Mobileimg: XX99Mark1Mobile,
@@ -20,6 +22,7 @@ const products = [
     FlexRowReverse: true,
     content:
       "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
+    link: "/headphones/product2",
   },
   {
     Mobileimg: XX59Mobile,
@@ -27,6 +30,7 @@ const products = [
     title: "XX59 Headphones",
     content:
       "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
+    link: "/headphones/product3",
   },
 ];
 
@@ -56,12 +60,14 @@ const HeadphonesProduct = () => {
                 <p className="text-black md:max-w-[572px] lg:max-w-[445px] text-[15px] font-medium leading-[25px] opacity-50 ">
                   {product.content}
                 </p>
-                <button
-                  className="py-[15px] w-[160px] bg-orange text-white text-[13px] tracking-[1px]
-          flex mx-auto text-center justify-center uppercase lg:mx-0 hover:bg-lightOrange duration-500"
-                >
-                  See Product
-                </button>
+                <Link to={product.link}>
+                  <button
+                    className="py-[15px] w-[160px] bg-orange text-white text-[13px] tracking-[1px]
+                  flex mx-auto text-center justify-center uppercase lg:mx-0 hover:bg-lightOrange duration-500"
+                  >
+                    See Product
+                  </button>
+                </Link>
               </div>
             </div>
           );

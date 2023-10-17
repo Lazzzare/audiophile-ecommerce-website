@@ -6,14 +6,17 @@ const Products = [
   {
     title: "Headphones",
     image: Headphones,
+    link: "/headphones",
   },
   {
     title: "Speakers",
     image: Speakers,
+    link: "/speakers",
   },
   {
     title: "Earphones",
     image: Earphones,
+    link: "/earphones",
   },
 ];
 
