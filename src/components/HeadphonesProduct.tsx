@@ -46,12 +46,6 @@ const HeadphonesProduct = () => {
                 alt="XX99"
                 className="rounded-lg flex mx-auto max-w-[385px]"
               />
-              {/* <img
-                src={product.Tabletimg}
-                alt="XX99"
-                className="tablet rounded-lg flex mx-auto "
-              /> */}
-              {/* <img src={product.Mobileimg} alt="XX99" className="rounded-lg" /> */}
               <div className="flex flex-col gap-6 mt-8">
                 <h3 className="text-orange text-sm tracking-[10px]">
                   NEW PRODUCT
