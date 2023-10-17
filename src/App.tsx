@@ -5,6 +5,8 @@ import Headphones from "./pages/Headphones";
 import Speakers from "./pages/Speakers";
 import Earphones from "./pages/Earphones";
 import { useState } from "react";
+import FooterHero from "./components/FooterHero";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -22,27 +24,16 @@ const App = () => {
         setActiveMenuRoute={setActiveMenuRoute}
       />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              activeMenuRoute={activeMenuRoute}
-              setActiveMenuRoute={setActiveMenuRoute}
-            />
-          }
-        ></Route>
-        <Route
-          path="/headphones"
-          element={
-            <Headphones
-              activeMenuRoute={activeMenuRoute}
-              setActiveMenuRoute={setActiveMenuRoute}
-            />
-          }
-        ></Route>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/headphones" element={<Headphones />}></Route>
         <Route path="/speakers" element={<Speakers />}></Route>
         <Route path="/earphones" element={<Earphones />}></Route>
       </Routes>
+      <FooterHero />
+      <Footer
+        activeMenuRoute={activeMenuRoute}
+        setActiveMenuRoute={setActiveMenuRoute}
+      />
     </div>
   );
 };
