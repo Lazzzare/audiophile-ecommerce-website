@@ -7,6 +7,9 @@ import Earphones from "./pages/Earphones";
 import { useState } from "react";
 import FooterHero from "./components/FooterHero";
 import Footer from "./components/Footer";
+// import HeadphoneFirstProduct from "./components/Headphones/HeadphoneFirstProduct";
+// import HeadphonesSecondProduct from "./components/Headphones/HeadphonesSecondProduct";
+// import HeadphonesLastProduct from "./components/Headphones/HeadphonesLastProduct";
 
 const App = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
