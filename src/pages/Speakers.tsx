@@ -1,4 +1,4 @@
-import HomeShop from "../components/HomeShop";
+// import HomeShop from "../components/HomeShop";
 import SpeakersProduct from "../components/SpeakersProduct";
 import SpeakersTitle from "../components/SpeakersTitle";
 
@@ -7,7 +7,7 @@ const Speakers = () => {
     <div>
       <SpeakersTitle />
       <SpeakersProduct />
-      <HomeShop />
+      {/* <HomeShop /> */}
     </div>
   );
 };
