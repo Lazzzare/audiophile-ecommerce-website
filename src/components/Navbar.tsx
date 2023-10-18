@@ -78,7 +78,9 @@ const Navbar = ({
             </div>
           </div>
         ) : null}
-        <img src={Logo} alt="Logo" className="cursor-pointer z-30" />
+        <Link to="/" onClick={() => setActiveMenuRoute(0)}>
+          <img src={Logo} alt="Logo" className="cursor-pointer z-30" />
+        </Link>
         <ul className="text-white hidden lg:flex items-center gap-8">
           {menuListArray.map((item, index) => {
             return (
