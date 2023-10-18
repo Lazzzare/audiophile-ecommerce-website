@@ -4,7 +4,6 @@ import HeadphonesProduct from "../components/Headphones/HeadphonesProduct";
 import HeadphoneFirstProduct from "../components/Headphones/HeadphoneFirstProduct";
 import HeadphonesSecondProduct from "../components/Headphones/HeadphonesSecondProduct";
 import HeadphonesLastProduct from "../components/Headphones/HeadphonesLastProduct";
-// import HomeShop from "../components/HomeShop";
 
 const Headphones = () => {
   return (
