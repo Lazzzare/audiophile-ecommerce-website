@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 
 const App = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [activeMenuRoute, setActiveMenuRoute] = useState(0);
+  const [activeMenuRoute, setActiveMenuRoute] = useState<number>(0);
   return (
     <div
       className={`w-full h-screen overflow-x-hidden ${
