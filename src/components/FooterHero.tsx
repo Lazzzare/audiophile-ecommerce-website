@@ -3,10 +3,18 @@ import ProfileImageTablet from "../images/shared/tablet/image-best-gear.jpg";
 import ProfileImageDesktop from "../images/shared/desktop/image-best-gear.jpg";
 import HomeShop from "./HomeShop";
 
-const FooterHero = () => {
+interface Props {
+  activeMenuRoute: number | null;
+  setActiveMenuRoute: (e: number) => void;
+}
+
+const FooterHero = ({ activeMenuRoute, setActiveMenuRoute }: Props) => {
   return (
     <>
-      <HomeShop />
+      <HomeShop
+        activeMenuRoute={activeMenuRoute}
+        setActiveMenuRoute={setActiveMenuRoute}
+      />
       <div className="my-[104px] px-6 md:px-10 flex flex-col lg:flex-row-reverse lg:max-w-[1110px] lg:mx-auto lg:gap-x-20 lg:items-center">
         <div>
           <img
