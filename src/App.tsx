@@ -25,13 +25,24 @@ const App = () => {
       />
 
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route
+          path="/"
+          element={
+            <Home
+              activeMenuRoute={activeMenuRoute}
+              setActiveMenuRoute={setActiveMenuRoute}
+            />
+          }
+        ></Route>
         <Route path="/headphones" element={<Headphones />}></Route>
         <Route path="/speakers" element={<Speakers />}></Route>
         <Route path="/earphones" element={<Earphones />}></Route>
       </Routes>
 
-      <FooterHero />
+      <FooterHero
+        activeMenuRoute={activeMenuRoute}
+        setActiveMenuRoute={setActiveMenuRoute}
+      />
       <Footer
         activeMenuRoute={activeMenuRoute}
         setActiveMenuRoute={setActiveMenuRoute}
