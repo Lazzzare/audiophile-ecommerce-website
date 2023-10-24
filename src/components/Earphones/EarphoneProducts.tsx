@@ -1,5 +1,6 @@
 import YX1 from "../../images/product-yx1-earphones/mobile/image-product.jpg";
 import YX1Desktop from "../../images/product-yx1-earphones/desktop/image-product.jpg";
+import { Link } from "react-router-dom";
 
 const EarphoneProducts = () => {
   return (
@@ -25,12 +26,14 @@ const EarphoneProducts = () => {
             -- creating new possibilities for more pleasing and practical audio
             setups.
           </p>
-          <button
-            className="text-white text-[13px] bg-orange py-[15px] w-[160px] mx-auto flex justify-center
-          lg:mx-0 font-bold tracking-[1px] uppercase"
-          >
-            See Product
-          </button>
+          <Link to={"/earphones/product1"}>
+            <button
+              className="text-white text-[13px] bg-orange py-[15px] w-[160px] mx-auto flex justify-center
+            lg:mx-0 font-bold tracking-[1px] uppercase"
+            >
+              See Product
+            </button>
+          </Link>
         </div>
       </div>
     </div>
