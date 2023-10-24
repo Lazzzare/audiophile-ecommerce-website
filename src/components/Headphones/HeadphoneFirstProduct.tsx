@@ -207,9 +207,11 @@ const HeadphoneFirstProduct = () => {
             <h1 className="text-black text-2xl font-bold tracking-[1.7px] uppercase">
               XX99 MARK I
             </h1>
-            <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
-              See Product
-            </button>
+            <Link to={"/headphones/product2"}>
+              <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
+                See Product
+              </button>
+            </Link>
           </div>
           <div className="flex flex-col gap-8 justify-center items-center">
             <img
@@ -230,9 +232,11 @@ const HeadphoneFirstProduct = () => {
             <h1 className="text-black text-2xl font-bold tracking-[1.7px] uppercase">
               XX59
             </h1>
-            <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
-              See Product
-            </button>
+            <Link to={"/headphones/product3"}>
+              <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
+                See Product
+              </button>
+            </Link>
           </div>
           <div className="flex flex-col gap-8 justify-center items-center">
             <img
@@ -253,9 +257,11 @@ const HeadphoneFirstProduct = () => {
             <h1 className="text-black text-2xl font-bold tracking-[1.7px] uppercase">
               ZX9 Speaker
             </h1>
-            <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
-              See Product
-            </button>
+            <Link to={"/speakers/product1"}>
+              <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
+                See Product
+              </button>
+            </Link>
           </div>
         </div>
       </div>
