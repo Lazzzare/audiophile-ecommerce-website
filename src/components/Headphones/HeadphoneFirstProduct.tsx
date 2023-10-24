@@ -1,7 +1,7 @@
 const HeadphoneFirstProduct = () => {
   return (
     <div>
-      <h2>Product 1</h2>
+      <h2>HelloProduct 1</h2>
     </div>
   );
 };
