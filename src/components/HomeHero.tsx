@@ -1,4 +1,5 @@
 import HeaderImage from "../images/home/desktop/headphone-hero-image.png";
+import { Link } from "react-router-dom";
 const HomeHero = () => {
   return (
     <div className="bg-black">
@@ -15,9 +16,11 @@ const HomeHero = () => {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <button className="w-[160px] flex lg:mx-0 justify-center items-center text-center mx-auto py-[15px] px-7 bg-orange hover:bg-lightOrange duration-500 text-[13px] tracking-[1px] font-bold uppercase">
-              See Product
-            </button>
+            <Link to={"/headphones/product1"}>
+              <button className="w-[160px] flex lg:mx-0 justify-center items-center text-center mx-auto py-[15px] px-7 bg-orange hover:bg-lightOrange duration-500 text-[13px] tracking-[1px] font-bold uppercase">
+                See Product
+              </button>
+            </Link>
           </div>
           <div className="lg:min-w-[442px]">
             <img
