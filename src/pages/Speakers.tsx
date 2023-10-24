@@ -1,6 +1,6 @@
 // import HomeShop from "../components/HomeShop";
-import SpeakersProduct from "../components/SpeakersProduct";
-import SpeakersTitle from "../components/SpeakersTitle";
+import SpeakersProduct from "../components/Speakers/SpeakersProduct";
+import SpeakersTitle from "../components/Speakers/SpeakersTitle";
 
 const Speakers = () => {
   return (
