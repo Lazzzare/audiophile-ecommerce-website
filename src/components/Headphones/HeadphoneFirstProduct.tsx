@@ -2,6 +2,21 @@ import { Link } from "react-router-dom";
 import ProductMobile from "../../images/product-xx99-mark-two-headphones/mobile/image-product.jpg";
 import ProductTablet from "../../images/product-xx99-mark-two-headphones/tablet/image-product.jpg";
 import ProductDesktop from "../../images/product-xx99-mark-two-headphones/desktop/image-product.jpg";
+import ManImageMobile from "../../images/shared/man-headerphone.png";
+import SecondImageMobile from "../../images/product-xx99-mark-two-headphones/mobile/image-gallery-2.jpg";
+import LastImageMobile from "../../images/product-xx99-mark-two-headphones/mobile/image-gallery-3.jpg";
+import ManImageTablet from "../../images/product-xx99-mark-two-headphones/tablet/image-gallery-1.jpg";
+import SecondImageTablet from "../../images/product-xx99-mark-two-headphones/tablet/image-gallery-2.jpg";
+import LastImageTablet from "../../images/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg";
+import XX99Mark1Mobile from "../../images/shared/mobile/image-xx99-mark-one-headphones.jpg";
+import XX59Mobile from "../../images/shared/mobile/image-xx59-headphones.jpg";
+import ZX9SpeakerMobile from "../../images/shared/mobile/image-zx9-speaker.jpg";
+import XX99Mark1Tablet from "../../images/shared/tablet/image-xx99-mark-one-headphones.jpg";
+import XX59Tablet from "../../images/shared/tablet/image-xx59-headphones.jpg";
+import ZX9SpeakerTablet from "../../images/shared/tablet/image-zx9-speaker.jpg";
+import XX99Mark1Desktop from "../../images/shared/desktop/image-xx99-mark-one-headphones.jpg";
+import XX59Desktop from "../../images/shared/desktop/image-xx59-headphones.jpg";
+import ZX9SpeakerDesktop from "../../images/shared/desktop/image-zx9-speaker.jpg";
 
 const HeadphoneFirstProduct = () => {
   return (
@@ -128,6 +143,119 @@ const HeadphoneFirstProduct = () => {
                 10m Optical Cable
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+      {/* Three Image box */}
+      <div className="mt-[88px] lg:mt-[120px] flex flex-col gap-6 md:flex-row">
+        <div className="flex flex-col gap-6">
+          <img
+            src={ManImageMobile}
+            alt="ManImage"
+            className="h-[175px] w-full object-cover rounded-xl flex md:hidden lg:hidden"
+          />
+          <img
+            src={ManImageTablet}
+            alt="ManImage"
+            className="rounded-xl w-full hidden md:flex lg:flex"
+          />
+          <img
+            src={SecondImageMobile}
+            alt="SecondImage"
+            className="rounded-xl w-full flex md:hidden lg:hidden"
+          />
+          <img
+            src={SecondImageTablet}
+            alt="SecondImage"
+            className="rounded-xl w-full hidden md:flex lg:flex"
+          />
+        </div>
+        <img
+          src={LastImageMobile}
+          alt="SecondImage"
+          className="rounded-xl w-full flex md:hidden lg:hidden"
+        />
+        <img
+          src={LastImageTablet}
+          alt="SecondImage"
+          className="rounded-xl w-full max-w-[600px] object-cover hidden md:flex lg:flex"
+        />
+      </div>
+      {/* you may also like */}
+      <div className="my-[120px] mb-[100px] md:mb-[100px] lg:mb-[300px]">
+        <h1 className="text-black text-2xl font-bold leading-9 uppercase text-center mb-10">
+          you may also like
+        </h1>
+        {/* products */}
+        <div className="flex flex-col md:flex-row md:mx-auto md:justify-center gap-[56px]">
+          <div className="flex flex-col gap-8 justify-center items-center">
+            <img
+              src={XX99Mark1Mobile}
+              alt="XX99Mark1"
+              className="flex md:hidden lg:hidden"
+            />
+            <img
+              src={XX99Mark1Tablet}
+              alt="XX99Mark1"
+              className="hidden md:flex lg:hidden w-[223px] h-[318px]"
+            />
+            <img
+              src={XX99Mark1Desktop}
+              alt="XX99Mark1"
+              className="hidden md:hidden lg:flex"
+            />
+            <h1 className="text-black text-2xl font-bold tracking-[1.7px] uppercase">
+              XX99 MARK I
+            </h1>
+            <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
+              See Product
+            </button>
+          </div>
+          <div className="flex flex-col gap-8 justify-center items-center">
+            <img
+              src={XX59Mobile}
+              alt="XX99Mark1"
+              className="flex md:hidden lg:hidden"
+            />
+            <img
+              src={XX59Tablet}
+              alt="XX99Mark1"
+              className="hidden md:flex lg:hidden w-[223px] h-[318px]"
+            />
+            <img
+              src={XX59Desktop}
+              alt="XX99Mark1"
+              className="hidden md:hidden lg:flex"
+            />
+            <h1 className="text-black text-2xl font-bold tracking-[1.7px] uppercase">
+              XX59
+            </h1>
+            <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
+              See Product
+            </button>
+          </div>
+          <div className="flex flex-col gap-8 justify-center items-center">
+            <img
+              src={ZX9SpeakerMobile}
+              alt="XX99Mark1"
+              className="flex md:hidden lg:hidden "
+            />
+            <img
+              src={ZX9SpeakerTablet}
+              alt="XX99Mark1"
+              className="hidden md:flex lg:hidden w-[223px] h-[318px]"
+            />
+            <img
+              src={ZX9SpeakerDesktop}
+              alt="XX99Mark1"
+              className="hidden md:hidden lg:flex"
+            />
+            <h1 className="text-black text-2xl font-bold tracking-[1.7px] uppercase">
+              ZX9 Speaker
+            </h1>
+            <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
+              See Product
+            </button>
           </div>
         </div>
       </div>
