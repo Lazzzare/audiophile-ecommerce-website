@@ -8,6 +8,11 @@ import { useState } from "react";
 import FooterHero from "./components/FooterHero";
 import Footer from "./components/Footer";
 import HeadphoneFirstProduct from "./components/Headphones/HeadphoneFirstProduct";
+import HeadphonesSecondProduct from "./components/Headphones/HeadphonesSecondProduct";
+import HeadphonesLastProduct from "./components/Headphones/HeadphonesLastProduct";
+import SpeakersFirstProduct from "./components/Speakers/SpeakersFirstProduct";
+import SpeakersSecondProduct from "./components/Speakers/SpeakersSecondProduct";
+import EarphoneWireless from "./components/Earphones/EarphoneWireless";
 
 const App = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -35,14 +40,38 @@ const App = () => {
             />
           }
         ></Route>
-        <Route path="/headphones" element={<Headphones />}>
-          <Route
-            path="/headphones/product1"
-            element={<HeadphoneFirstProduct />}
-          ></Route>
-        </Route>
+
+        <Route path="/headphones" element={<Headphones />}></Route>
+        {/* Headphone product pages */}
+        <Route
+          path="/headphones/product1"
+          element={<HeadphoneFirstProduct />}
+        ></Route>
+        <Route
+          path="/headphones/product2"
+          element={<HeadphonesSecondProduct />}
+        ></Route>
+        <Route
+          path="/headphones/product3"
+          element={<HeadphonesLastProduct />}
+        ></Route>
+
         <Route path="/speakers" element={<Speakers />}></Route>
+        {/* Speakers Product Pages */}
+        <Route
+          path="/speakers/product1"
+          element={<SpeakersFirstProduct />}
+        ></Route>
+        <Route
+          path="/speakers/product2"
+          element={<SpeakersSecondProduct />}
+        ></Route>
+        {/* Earphones Product pages */}
         <Route path="/earphones" element={<Earphones />}></Route>
+        <Route
+          path="/earphones/product1"
+          element={<EarphoneWireless />}
+        ></Route>
       </Routes>
 
       <FooterHero
