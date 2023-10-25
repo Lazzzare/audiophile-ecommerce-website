@@ -45,32 +45,42 @@ const App = () => {
         {/* Headphone product pages */}
         <Route
           path="/headphones/product1"
-          element={<HeadphoneFirstProduct />}
+          element={
+            <HeadphoneFirstProduct setActiveMenuRoute={setActiveMenuRoute} />
+          }
         ></Route>
         <Route
           path="/headphones/product2"
-          element={<HeadphonesSecondProduct />}
+          element={
+            <HeadphonesSecondProduct setActiveMenuRoute={setActiveMenuRoute} />
+          }
         ></Route>
         <Route
           path="/headphones/product3"
-          element={<HeadphonesLastProduct />}
+          element={
+            <HeadphonesLastProduct setActiveMenuRoute={setActiveMenuRoute} />
+          }
         ></Route>
 
         <Route path="/speakers" element={<Speakers />}></Route>
         {/* Speakers Product Pages */}
         <Route
           path="/speakers/product1"
-          element={<SpeakersFirstProduct />}
+          element={
+            <SpeakersFirstProduct setActiveMenuRoute={setActiveMenuRoute} />
+          }
         ></Route>
         <Route
           path="/speakers/product2"
-          element={<SpeakersSecondProduct />}
+          element={
+            <SpeakersSecondProduct setActiveMenuRoute={setActiveMenuRoute} />
+          }
         ></Route>
         {/* Earphones Product pages */}
         <Route path="/earphones" element={<Earphones />}></Route>
         <Route
           path="/earphones/product1"
-          element={<EarphoneWireless />}
+          element={<EarphoneWireless setActiveMenuRoute={setActiveMenuRoute} />}
         ></Route>
       </Routes>
 
