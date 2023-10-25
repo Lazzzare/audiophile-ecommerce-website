@@ -38,9 +38,10 @@ const HeadphonesProduct = () => {
   return (
     <div className="px-6 md:px-10 pt-16 lg:pt-[160px] lg:max-w-[1110px] lg:mx-auto lg:px-0">
       <div className="gap-[120px] lg:gap-[160px] mb-[120px] lg:mb-[200px] flex flex-col justify-center items-center text-center">
-        {products.map((product) => {
+        {products.map((product, index) => {
           return (
             <div
+              key={index}
               className={`flex flex-col lg:gap-x-[125px] lg:text-start ${
                 product.FlexRowReverse ? "lg:flex-row-reverse" : "lg:flex-row"
               }`}
