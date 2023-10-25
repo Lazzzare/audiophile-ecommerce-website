@@ -65,12 +65,21 @@ const Navbar = ({
                       <h1 className="text-black text-[15px]  font-bold tracking-[1px] uppercase">
                         {product.title}
                       </h1>
-                      <div className="flex gap-3 items-center mx-auto justify-center cursor-pointer">
-                        <h2 className="text-black text-[13px] font-bold tracking-[1px] uppercase opacity-50 z-10">
-                          SHOP
-                        </h2>
-                        <img src={Arrow} alt="Arrow" />
-                      </div>
+                      <Link
+                        to={product.link}
+                        onClick={() => {
+                          setMobileMenu(false);
+                          setActiveMenuRoute(product.id);
+                        }}
+                        className="flex flex-col gap-y-4"
+                      >
+                        <div className="flex gap-3 items-center mx-auto justify-center cursor-pointer">
+                          <h2 className="text-black text-[13px] font-bold tracking-[1px] uppercase opacity-50 z-10">
+                            SHOP
+                          </h2>
+                          <img src={Arrow} alt="Arrow" />
+                        </div>
+                      </Link>
                     </div>
                   </div>
                 );
