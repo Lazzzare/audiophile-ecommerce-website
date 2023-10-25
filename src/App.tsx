@@ -17,6 +17,8 @@ import EarphoneWireless from "./components/Earphones/EarphoneWireless";
 const App = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [activeMenuRoute, setActiveMenuRoute] = useState<number>(0);
+  const [productAmount, setProductAmount] = useState<number>(0);
+  const [addToCart, setAddToCart] = useState(false);
   return (
     <div
       className={`w-full h-screen overflow-x-hidden ${
@@ -28,6 +30,9 @@ const App = () => {
         setMobileMenu={setMobileMenu}
         activeMenuRoute={activeMenuRoute}
         setActiveMenuRoute={setActiveMenuRoute}
+        productAmount={productAmount}
+        addToCart={addToCart}
+        setAddToCart={setAddToCart}
       />
 
       <Routes>
@@ -46,19 +51,32 @@ const App = () => {
         <Route
           path="/headphones/product1"
           element={
-            <HeadphoneFirstProduct setActiveMenuRoute={setActiveMenuRoute} />
+            <HeadphoneFirstProduct
+              setActiveMenuRoute={setActiveMenuRoute}
+              productAmount={productAmount}
+              setProductAmount={setProductAmount}
+              setAddToCart={setAddToCart}
+            />
           }
         ></Route>
         <Route
           path="/headphones/product2"
           element={
-            <HeadphonesSecondProduct setActiveMenuRoute={setActiveMenuRoute} />
+            <HeadphonesSecondProduct
+              setActiveMenuRoute={setActiveMenuRoute}
+              productAmount={productAmount}
+              setProductAmount={setProductAmount}
+              setAddToCart={setAddToCart}
+            />
           }
         ></Route>
         <Route
           path="/headphones/product3"
           element={
-            <HeadphonesLastProduct setActiveMenuRoute={setActiveMenuRoute} />
+            <HeadphonesLastProduct
+              setActiveMenuRoute={setActiveMenuRoute}
+              productAmount={productAmount}
+            />
           }
         ></Route>
 
@@ -67,20 +85,31 @@ const App = () => {
         <Route
           path="/speakers/product1"
           element={
-            <SpeakersFirstProduct setActiveMenuRoute={setActiveMenuRoute} />
+            <SpeakersFirstProduct
+              setActiveMenuRoute={setActiveMenuRoute}
+              productAmount={productAmount}
+            />
           }
         ></Route>
         <Route
           path="/speakers/product2"
           element={
-            <SpeakersSecondProduct setActiveMenuRoute={setActiveMenuRoute} />
+            <SpeakersSecondProduct
+              setActiveMenuRoute={setActiveMenuRoute}
+              productAmount={productAmount}
+            />
           }
         ></Route>
         {/* Earphones Product pages */}
         <Route path="/earphones" element={<Earphones />}></Route>
         <Route
           path="/earphones/product1"
-          element={<EarphoneWireless setActiveMenuRoute={setActiveMenuRoute} />}
+          element={
+            <EarphoneWireless
+              setActiveMenuRoute={setActiveMenuRoute}
+              productAmount={productAmount}
+            />
+          }
         ></Route>
       </Routes>
 
