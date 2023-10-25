@@ -18,7 +18,11 @@ import XX99Mark1Desktop from "../../images/shared/desktop/image-xx99-mark-one-he
 import XX59Desktop from "../../images/shared/desktop/image-xx59-headphones.jpg";
 import ZX9SpeakerDesktop from "../../images/shared/desktop/image-zx9-speaker.jpg";
 
-const EarphoneWireless = () => {
+interface Props {
+  setActiveMenuRoute: (e: number) => void;
+}
+
+const EarphoneWireless = ({ setActiveMenuRoute }: Props) => {
   return (
     <div className="px-6 md:px-10 lg:px-0 pt-4 lg:pt-[80px] md:pt-10 lg:max-w-[1110px] lg:mx-auto">
       <Link to={"/headphones"}>
@@ -110,15 +114,15 @@ const EarphoneWireless = () => {
                 2x
               </span>
               <p className="text-black text-[15px] font-medium leading-[25px] opacity-50">
-                Speaker Unit
+                Earphone Unit
               </p>
             </div>
             <div className="flex flex-row gap-5">
               <span className="text-orange text-[15px] font-bold leading-[25px]">
-                2x
+                6x
               </span>
               <p className="text-black text-[15px] font-medium leading-[25px] opacity-50">
-                Speaker Cloth Panel
+                Multi-size Earplugs
               </p>
             </div>
             <div className="flex flex-row gap-5">
@@ -134,7 +138,7 @@ const EarphoneWireless = () => {
                 1x
               </span>
               <p className="text-black text-[15px] font-medium leading-[25px] opacity-50">
-                3.5mm 10m Audio Cable
+                USB-C Charging Cable
               </p>
             </div>
             <div className="flex flex-row gap-5">
@@ -142,7 +146,7 @@ const EarphoneWireless = () => {
                 1x
               </span>
               <p className="text-black text-[15px] font-medium leading-[25px] opacity-50">
-                10m Optical Cable
+                Travel Pouch
               </p>
             </div>
           </div>
@@ -209,7 +213,10 @@ const EarphoneWireless = () => {
             <h1 className="text-black text-2xl font-bold tracking-[1.7px] uppercase">
               XX99 MARK I
             </h1>
-            <Link to={"/headphones/product2"}>
+            <Link
+              to={"/headphones/product2"}
+              onClick={() => setActiveMenuRoute(1)}
+            >
               <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
                 See Product
               </button>
@@ -234,7 +241,10 @@ const EarphoneWireless = () => {
             <h1 className="text-black text-2xl font-bold tracking-[1.7px] uppercase">
               XX59
             </h1>
-            <Link to={"/headphones/product3"}>
+            <Link
+              to={"/headphones/product3"}
+              onClick={() => setActiveMenuRoute(1)}
+            >
               <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
                 See Product
               </button>
@@ -249,7 +259,7 @@ const EarphoneWireless = () => {
             <img
               src={ZX9SpeakerTablet}
               alt="XX99Mark1"
-              className="hidden md:flex lg:hidden"
+              className="hidden md:flex lg:hidden w-[250px] h-[320px]"
             />
             <img
               src={ZX9SpeakerDesktop}
@@ -259,7 +269,10 @@ const EarphoneWireless = () => {
             <h1 className="text-black text-2xl font-bold tracking-[1.7px] uppercase">
               ZX9 SPEAKER
             </h1>
-            <Link to={"/speakers/product1"}>
+            <Link
+              to={"/speakers/product1"}
+              onClick={() => setActiveMenuRoute(2)}
+            >
               <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
                 See Product
               </button>
