@@ -10,12 +10,12 @@ interface Props {
 const Home = ({ activeMenuRoute, setActiveMenuRoute }: Props) => {
   return (
     <div>
-      <HomeHero />
+      <HomeHero setActiveMenuRoute={setActiveMenuRoute} />
       <HomeShop
         activeMenuRoute={activeMenuRoute}
         setActiveMenuRoute={setActiveMenuRoute}
       />
-      <HomeProducts />
+      <HomeProducts setActiveMenuRoute={setActiveMenuRoute} />
     </div>
   );
 };
