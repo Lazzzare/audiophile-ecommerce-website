@@ -18,7 +18,11 @@ import XX99Mark1Desktop from "../../images/shared/desktop/image-xx99-mark-one-he
 import XX59Desktop from "../../images/shared/desktop/image-xx59-headphones.jpg";
 import ZX9SpeakerDesktop from "../../images/shared/desktop/image-zx9-speaker.jpg";
 
-const HeadphoneFirstProduct = () => {
+interface Props {
+  setActiveMenuRoute: (e: number) => void;
+}
+
+const HeadphoneFirstProduct = ({ setActiveMenuRoute }: Props) => {
   return (
     <div className="px-6 md:px-10 lg:px-0 pt-4 lg:pt-[80px] md:pt-10 lg:max-w-[1110px] lg:mx-auto">
       <Link to={"/headphones"}>
@@ -84,31 +88,32 @@ const HeadphoneFirstProduct = () => {
             FEATURES
           </h1>
           <p className="text-black text-[15px] lg:w-[635px] font-medium leading-[25px] opacity-50">
-            Connect via Bluetooth or nearly any wired source. This speaker
-            features optical, digital coaxial, USB Type-B, stereo RCA, and
-            stereo XLR inputs, allowing you to have up to five wired source
-            devices connected for easy switching. Improved bluetooth technology
-            offers near lossless audio quality at up to 328ft (100m). Discover
-            clear, more natural sounding highs than the competition with ZX9’s
-            signature planar diaphragm tweeter. Equally important is its
-            powerful room-shaking bass courtesy of a 6.5” aluminum alloy bass
-            unit. You’ll be able to enjoy equal sound quality whether in a large
-            room or small den. Furthermore, you will experience new sensations
-            from old songs since it can respond to even the subtle waveforms.
+            Featuring a genuine leather head strap and premium earcups, these
+            headphones deliver superior comfort for those who like to enjoy
+            endless listening. It includes intuitive controls designed for any
+            situation. Whether you’re taking a business call or just in your own
+            personal space, the auto on/off and pause features ensure that
+            you’ll never miss a beat. The advanced Active Noise Cancellation
+            with built-in equalizer allow you to experience your audio world on
+            your terms. It lets you enjoy your audio in peace, but quickly
+            interact with your surroundings when you need to. Combined with
+            Bluetooth 5. 0 compliant connectivity and 17 hour battery life, the
+            XX99 Mark II headphones gives you superior sound, cutting-edge
+            technology, and a modern design aesthetic.
           </p>
         </div>
         {/* In the box */}
-        <div className="flex flex-col md:flex-row lg:flex-col lg:justify-normal md:justify-between">
+        <div className="flex flex-col md:flex-row lg:flex-col lg:space-y-2 lg:justify-normal md:justify-between">
           <h1 className="text-black text-2xl md:text-[36px] font-bold leading-9 tracking-[0.8px] md:tracking-[1.1px] mb-6 uppercase">
             in the box
           </h1>
           <div>
             <div className="flex flex-row gap-5">
               <span className="text-orange text-[15px] font-bold leading-[25px]">
-                2x
+                1x
               </span>
               <p className="text-black text-[15px] font-medium leading-[25px] opacity-50">
-                Speaker Unit
+                Headphone Unit
               </p>
             </div>
             <div className="flex flex-row gap-5">
@@ -116,7 +121,7 @@ const HeadphoneFirstProduct = () => {
                 2x
               </span>
               <p className="text-black text-[15px] font-medium leading-[25px] opacity-50">
-                Speaker Cloth Panel
+                Replacement Earcups
               </p>
             </div>
             <div className="flex flex-row gap-5">
@@ -140,7 +145,7 @@ const HeadphoneFirstProduct = () => {
                 1x
               </span>
               <p className="text-black text-[15px] font-medium leading-[25px] opacity-50">
-                10m Optical Cable
+                Travel Bag
               </p>
             </div>
           </div>
@@ -257,7 +262,10 @@ const HeadphoneFirstProduct = () => {
             <h1 className="text-black text-2xl font-bold tracking-[1.7px] uppercase">
               ZX9 Speaker
             </h1>
-            <Link to={"/speakers/product1"}>
+            <Link
+              to={"/speakers/product1"}
+              onClick={() => setActiveMenuRoute(2)}
+            >
               <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
                 See Product
               </button>
