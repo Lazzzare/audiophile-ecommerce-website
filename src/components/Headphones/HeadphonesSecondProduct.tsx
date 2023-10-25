@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import ProductMobile from "../../images/product-xx99-mark-one-headphones/mobile/image-product.jpg";
 import ProductTablet from "../../images/product-xx99-mark-one-headphones/tablet/image-product.jpg";
 import ProductDesktop from "../../images/product-xx99-mark-one-headphones/desktop/image-product.jpg";
-import ManImageMobile from "../../images/shared/man-headerphone.png";
+import ManImageMobile from "../../images/product-xx99-mark-one-headphones/mobile/image-gallery-1.jpg";
 import SecondImageMobile from "../../images/product-xx99-mark-one-headphones/mobile/image-gallery-2.jpg";
 import LastImageMobile from "../../images/product-xx99-mark-one-headphones/mobile/image-gallery-3.jpg";
 import ManImageTablet from "../../images/product-xx99-mark-one-headphones/tablet/image-gallery-1.jpg";
@@ -18,7 +18,11 @@ import XX99Mark2Desktop from "../../images/shared/desktop/image-xx99-mark-two-he
 import XX59Desktop from "../../images/shared/desktop/image-xx59-headphones.jpg";
 import ZX9SpeakerDesktop from "../../images/shared/desktop/image-zx9-speaker.jpg";
 
-const HeadphonesSecondProduct = () => {
+interface Props {
+  setActiveMenuRoute: (e: number) => void;
+}
+
+const HeadphonesSecondProduct = ({ setActiveMenuRoute }: Props) => {
   return (
     <div className="px-6 md:px-10 lg:px-0 pt-4 lg:pt-[80px] md:pt-10 lg:max-w-[1110px] lg:mx-auto">
       <Link to={"/headphones"}>
@@ -85,17 +89,17 @@ const HeadphonesSecondProduct = () => {
             FEATURES
           </h1>
           <p className="text-black text-[15px] lg:w-[635px] font-medium leading-[25px] opacity-50">
-            Connect via Bluetooth or nearly any wired source. This speaker
-            features optical, digital coaxial, USB Type-B, stereo RCA, and
-            stereo XLR inputs, allowing you to have up to five wired source
-            devices connected for easy switching. Improved bluetooth technology
-            offers near lossless audio quality at up to 328ft (100m). Discover
-            clear, more natural sounding highs than the competition with ZX9’s
-            signature planar diaphragm tweeter. Equally important is its
-            powerful room-shaking bass courtesy of a 6.5” aluminum alloy bass
-            unit. You’ll be able to enjoy equal sound quality whether in a large
-            room or small den. Furthermore, you will experience new sensations
-            from old songs since it can respond to even the subtle waveforms.
+            As the headphones all others are measured against, the XX99 Mark I
+            demonstrates over five decades of audio expertise, redefining the
+            critical listening experience. This pair of closed-back headphones
+            are made of industrial, aerospace-grade materials to emphasize
+            durability at a relatively light weight of 11 oz. From the
+            handcrafted microfiber ear cushions to the robust metal headband
+            with inner damping element, the components work together to deliver
+            comfort and uncompromising sound. Its closed-back design delivers up
+            to 27 dB of passive noise cancellation, reducing resonance by
+            reflecting sound to a dedicated absorber. For connectivity, a
+            specially tuned cable is included with a balanced gold connector.
           </p>
         </div>
         {/* In the box */}
@@ -106,10 +110,10 @@ const HeadphonesSecondProduct = () => {
           <div>
             <div className="flex flex-row gap-5">
               <span className="text-orange text-[15px] font-bold leading-[25px]">
-                2x
+                1x
               </span>
               <p className="text-black text-[15px] font-medium leading-[25px] opacity-50">
-                Speaker Unit
+                Headphone Unit
               </p>
             </div>
             <div className="flex flex-row gap-5">
@@ -117,7 +121,7 @@ const HeadphonesSecondProduct = () => {
                 2x
               </span>
               <p className="text-black text-[15px] font-medium leading-[25px] opacity-50">
-                Speaker Cloth Panel
+                Replacement Earcups
               </p>
             </div>
             <div className="flex flex-row gap-5">
@@ -133,15 +137,7 @@ const HeadphonesSecondProduct = () => {
                 1x
               </span>
               <p className="text-black text-[15px] font-medium leading-[25px] opacity-50">
-                3.5mm 10m Audio Cable
-              </p>
-            </div>
-            <div className="flex flex-row gap-5">
-              <span className="text-orange text-[15px] font-bold leading-[25px]">
-                1x
-              </span>
-              <p className="text-black text-[15px] font-medium leading-[25px] opacity-50">
-                10m Optical Cable
+                3.5mm 5m Audio Cable
               </p>
             </div>
           </div>
@@ -258,7 +254,10 @@ const HeadphonesSecondProduct = () => {
             <h1 className="text-black text-2xl font-bold tracking-[1.7px] uppercase">
               ZX9 Speaker
             </h1>
-            <Link to={"/speakers/product1"}>
+            <Link
+              to={"/speakers/product1"}
+              onClick={() => setActiveMenuRoute(2)}
+            >
               <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
                 See Product
               </button>
