@@ -18,7 +18,11 @@ import XX99Mark1Desktop from "../../images/shared/desktop/image-xx99-mark-one-he
 import XX59Desktop from "../../images/shared/desktop/image-xx59-headphones.jpg";
 import ZX7SpeakerDesktop from "../../images/shared/desktop/image-zx7-speaker.jpg";
 
-const SpeakersFirstProduct = () => {
+interface Props {
+  setActiveMenuRoute: (e: number) => void;
+}
+
+const SpeakersFirstProduct = ({ setActiveMenuRoute }: Props) => {
   return (
     <div className="px-6 md:px-10 lg:px-0 pt-4 lg:pt-[80px] md:pt-10 lg:max-w-[1110px] lg:mx-auto">
       <Link to={"/headphones"}>
@@ -208,7 +212,10 @@ const SpeakersFirstProduct = () => {
             <h1 className="text-black text-2xl font-bold tracking-[1.7px] uppercase">
               XX99 MARK I
             </h1>
-            <Link to={"/headphones/product2"}>
+            <Link
+              to={"/headphones/product2"}
+              onClick={() => setActiveMenuRoute(1)}
+            >
               <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
                 See Product
               </button>
@@ -233,7 +240,10 @@ const SpeakersFirstProduct = () => {
             <h1 className="text-black text-2xl font-bold tracking-[1.7px] uppercase">
               XX59
             </h1>
-            <Link to={"/headphones/product3"}>
+            <Link
+              to={"/headphones/product3"}
+              onClick={() => setActiveMenuRoute(1)}
+            >
               <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
                 See Product
               </button>
@@ -242,17 +252,17 @@ const SpeakersFirstProduct = () => {
           <div className="flex flex-col gap-8 justify-center items-center">
             <img
               src={ZX7SpeakerMobile}
-              alt="XX99Mark1"
+              alt="ZX7SpeakerMobile"
               className="flex md:hidden lg:hidden "
             />
             <img
               src={ZX7SpeakerTablet}
-              alt="XX99Mark1"
-              className="hidden md:flex lg:hidden"
+              alt="ZX7SpeakerTablet"
+              className="hidden md:flex lg:hidden w-[250px] h-[320px]"
             />
             <img
               src={ZX7SpeakerDesktop}
-              alt="XX99Mark1"
+              alt="ZX7SpeakerDesktop"
               className="hidden md:hidden lg:flex"
             />
             <h1 className="text-black text-2xl font-bold tracking-[1.7px] uppercase">
