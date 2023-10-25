@@ -12,15 +12,17 @@ import XX99Mark2Mobile from "../../images/shared/mobile/image-xx99-mark-two-head
 import XX99Mark1Mobile from "../../images/product-xx99-mark-one-headphones/mobile/image-product.jpg";
 import ZX9SpeakerMobile from "../../images/shared/mobile/image-zx9-speaker.jpg";
 import XX99Mark2Tablet from "../../images/shared/tablet/image-xx99-mark-two-headphones.jpg";
-// import XX59Tablet from "../../images/shared/tablet/image-xx59-headphones.jpg";
 import XX99Mark1Tablet from "../../images/shared/tablet/image-xx99-mark-one-headphones.jpg";
 import ZX9SpeakerTablet from "../../images/shared/tablet/image-zx9-speaker.jpg";
 import XX99Mark2Desktop from "../../images/shared/desktop/image-xx99-mark-two-headphones.jpg";
-// import XX59Desktop from "../../images/shared/desktop/image-xx59-headphones.jpg";
 import XX99Mark1Desktop from "../../images/shared/desktop/image-xx99-mark-one-headphones.jpg";
 import ZX9SpeakerDesktop from "../../images/shared/desktop/image-zx9-speaker.jpg";
 
-const HeadphonesLastProduct = () => {
+interface Props {
+  setActiveMenuRoute: (e: number) => void;
+}
+
+const HeadphonesLastProduct = ({ setActiveMenuRoute }: Props) => {
   return (
     <div className="px-6 md:px-10 lg:px-0 pt-4 lg:pt-[80px] md:pt-10 lg:max-w-[1110px] lg:mx-auto">
       <Link to={"/headphones"}>
@@ -52,19 +54,18 @@ const HeadphonesLastProduct = () => {
               NEW PRODUCT
             </h2>
             <h1 className="text-black text-[28px] font-bold tracking-[1px] uppercase md:leading-8">
-              XX99 Mark I Headphones
+              XX59 Headphones
             </h1>
             <p className="text-black text-[15px] md:w-[339px] lg:w-[445px] font-medium leading-[25px] opacity-50">
-              As the gold standard for headphones, the classic XX99 Mark I
-              offers detailed and accurate audio reproduction for audiophiles,
-              mixing engineers, and music aficionados alike in studios and on
-              the go.
+              Enjoy your audio almost anywhere and customize it to your specific
+              tastes with the XX59 headphones. The stylish yet durable versatile
+              wireless headset is a brilliant companion at home or on the move.
             </p>
           </div>
           {/* Price and add to cart */}
           <div className="flex flex-col gap-8 mt-6">
             <h4 className="text-lg font-bold tracking-[1.3px] text-black">
-              $ 1,750
+              $ 899
             </h4>
             <div className="flex flex-row gap-4">
               <div className="flex flex-row justify-between p-[15px] w-[120px] bg-silver text-black text-[13px] font-bold tracking-[1px]">
@@ -87,17 +88,18 @@ const HeadphonesLastProduct = () => {
             FEATURES
           </h1>
           <p className="text-black text-[15px] lg:w-[635px] font-medium leading-[25px] opacity-50">
-            Connect via Bluetooth or nearly any wired source. This speaker
-            features optical, digital coaxial, USB Type-B, stereo RCA, and
-            stereo XLR inputs, allowing you to have up to five wired source
-            devices connected for easy switching. Improved bluetooth technology
-            offers near lossless audio quality at up to 328ft (100m). Discover
-            clear, more natural sounding highs than the competition with ZX9’s
-            signature planar diaphragm tweeter. Equally important is its
-            powerful room-shaking bass courtesy of a 6.5” aluminum alloy bass
-            unit. You’ll be able to enjoy equal sound quality whether in a large
-            room or small den. Furthermore, you will experience new sensations
-            from old songs since it can respond to even the subtle waveforms.
+            These headphones have been created from durable, high-quality
+            materials tough enough to take anywhere. Its compact folding design
+            fuses comfort and minimalist style making it perfect for travel.
+            Flawless transmission is assured by the latest wireless technology
+            engineered for audio synchronization with videos. More than a simple
+            pair of headphones, this headset features a pair of built-in
+            microphones for clear, hands-free calling when paired with a
+            compatible smartphone. Controlling music and calls is also intuitive
+            thanks to easy-access touch buttons on the earcups. Regardless of
+            how you use the XX59 headphones, you can do so all day thanks to an
+            impressive 30-hour battery life that can be rapidly recharged via
+            USB-C.
           </p>
         </div>
         {/* In the box */}
@@ -108,10 +110,10 @@ const HeadphonesLastProduct = () => {
           <div>
             <div className="flex flex-row gap-5">
               <span className="text-orange text-[15px] font-bold leading-[25px]">
-                2x
+                1x
               </span>
               <p className="text-black text-[15px] font-medium leading-[25px] opacity-50">
-                Speaker Unit
+                Headphone Unit
               </p>
             </div>
             <div className="flex flex-row gap-5">
@@ -119,7 +121,7 @@ const HeadphonesLastProduct = () => {
                 2x
               </span>
               <p className="text-black text-[15px] font-medium leading-[25px] opacity-50">
-                Speaker Cloth Panel
+                Replacement Earcups
               </p>
             </div>
             <div className="flex flex-row gap-5">
@@ -135,15 +137,7 @@ const HeadphonesLastProduct = () => {
                 1x
               </span>
               <p className="text-black text-[15px] font-medium leading-[25px] opacity-50">
-                3.5mm 10m Audio Cable
-              </p>
-            </div>
-            <div className="flex flex-row gap-5">
-              <span className="text-orange text-[15px] font-bold leading-[25px]">
-                1x
-              </span>
-              <p className="text-black text-[15px] font-medium leading-[25px] opacity-50">
-                10m Optical Cable
+                3.5mm 5m Audio Cable
               </p>
             </div>
           </div>
@@ -260,7 +254,10 @@ const HeadphonesLastProduct = () => {
             <h1 className="text-black text-2xl font-bold tracking-[1.7px] uppercase">
               ZX9 Speaker
             </h1>
-            <Link to={"/speakers/product1"}>
+            <Link
+              to={"/speakers/product1"}
+              onClick={() => setActiveMenuRoute(2)}
+            >
               <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
                 See Product
               </button>
