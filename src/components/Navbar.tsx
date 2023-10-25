@@ -13,6 +13,9 @@ interface Props {
   setMobileMenu: (e: boolean) => void;
   activeMenuRoute: number | null;
   setActiveMenuRoute: (e: number) => void;
+  productAmount: number;
+  addToCart: boolean;
+  setAddToCart: (e: boolean) => void;
 }
 
 const Navbar = ({
@@ -20,7 +23,10 @@ const Navbar = ({
   setMobileMenu,
   activeMenuRoute,
   setActiveMenuRoute,
-}: Props) => {
+  productAmount,
+  addToCart,
+}: // setAddToCart,
+Props) => {
   return (
     <div className="bg-black">
       <div className="lg:max-w-[1440px] flex lg:mx-auto justify-between items-center bg-black px-6 md:px-[39px] lg:px-[165px] py-8 lg:py-9">
@@ -107,7 +113,14 @@ const Navbar = ({
             );
           })}
         </ul>
-        <img src={Cart} alt="Cart" className="cursor-pointer z-30" />
+        <div>
+          {productAmount > 0 && addToCart === true ? (
+            <div className="absolute top-[20px] right-[408px] bg-orange text-whiteSmoke w-6 h-4 rounded-full flex justify-center font-bold items-center text-sm text-center">
+              <p>{productAmount}</p>
+            </div>
+          ) : null}
+          <img src={Cart} alt="Cart" className="cursor-pointer z-30" />
+        </div>
       </div>
       <div className="md:px-[39px] lg:px-[165px] lg:max-w-[1440px] lg:mx-auto">
         <div className="w-full bg-white h-[1px] opacity-20"></div>
