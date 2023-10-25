@@ -1,6 +1,11 @@
 import HeaderImage from "../images/home/desktop/headphone-hero-image.png";
 import { Link } from "react-router-dom";
-const HomeHero = () => {
+
+interface Props {
+  setActiveMenuRoute: (e: number) => void;
+}
+
+const HomeHero = ({ setActiveMenuRoute }: Props) => {
   return (
     <div className="bg-black">
       <div className="lg:max-w-[1440px] lg:mx-auto bg-black flex flex-row justify-between lg:px-[165px]">
@@ -16,7 +21,10 @@ const HomeHero = () => {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <Link to={"/headphones/product1"}>
+            <Link
+              to={"/headphones/product1"}
+              onClick={() => setActiveMenuRoute(1)}
+            >
               <button className="w-[160px] flex lg:mx-0 justify-center items-center text-center mx-auto py-[15px] px-7 bg-orange hover:bg-lightOrange duration-500 text-[13px] tracking-[1px] font-bold uppercase">
                 See Product
               </button>
