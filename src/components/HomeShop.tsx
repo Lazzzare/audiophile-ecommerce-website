@@ -21,6 +21,7 @@ const HomeShop = ({ setActiveMenuRoute }: Props) => {
       {products.map((product, index) => {
         return (
           <Link
+            key={index}
             onClick={() => {
               setActiveMenuRoute(product.id);
             }}
@@ -28,7 +29,6 @@ const HomeShop = ({ setActiveMenuRoute }: Props) => {
             className="w-[327px] h-[165px] md:w-[223px] lg:w-[350px] lg:h-[204px] rounded-lg bg-silver mx-auto flex flex-col items-center justify-center cursor-pointer"
           >
             <div
-              key={index}
               onClick={handleLinkClick}
               className="w-[327px] h-[165px] md:w-[223px] lg:w-[350px] lg:h-[204px] rounded-lg bg-silver mx-auto flex flex-col items-center justify-center cursor-pointer"
             >
