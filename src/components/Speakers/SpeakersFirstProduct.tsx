@@ -20,9 +20,10 @@ import ZX7SpeakerDesktop from "../../images/shared/desktop/image-zx7-speaker.jpg
 
 interface Props {
   setActiveMenuRoute: (e: number) => void;
+  productAmount: number;
 }
 
-const SpeakersFirstProduct = ({ setActiveMenuRoute }: Props) => {
+const SpeakersFirstProduct = ({ setActiveMenuRoute, productAmount }: Props) => {
   return (
     <div className="px-6 md:px-10 lg:px-0 pt-4 lg:pt-[80px] md:pt-10 lg:max-w-[1110px] lg:mx-auto">
       <Link to={"/headphones"}>
@@ -71,7 +72,7 @@ const SpeakersFirstProduct = ({ setActiveMenuRoute }: Props) => {
             <div className="flex flex-row gap-4">
               <div className="flex flex-row justify-between p-[15px] w-[120px] bg-silver text-black text-[13px] font-bold tracking-[1px]">
                 <span className="cursor-pointer opacity-50">-</span>
-                <h6>1</h6>
+                <h6>{productAmount}</h6>
                 <span className="cursor-pointer opacity-50">+</span>
               </div>
               <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px] hover:bg-lightOrange duration-500">
