@@ -18,13 +18,13 @@ const EarphoneProducts = () => {
             className=" text-black text-[28px] lg:mx-0 mx-auto font-bold tracking-[1px] w-[327px] md:leading-[44px] md:tracking-[1.4px]
           md:text-[44px]"
           >
-            ZX9 SPEAKER
+            YX1 WIRELESS EARPHONES
           </h1>
           <p className="w-[327px] md:w-[572px] lg:w-[445px] lg:text-start  text-center text-black text-[15px] leading-[25px] font-medium opacity-50">
-            Upgrade your sound system with the all new ZX9 active speaker. It’s
-            a bookshelf speaker system that offers truly wireless connectivity
-            -- creating new possibilities for more pleasing and practical audio
-            setups.
+            Tailor your listening experience with bespoke dynamic drivers from
+            the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound
+            even in noisy environments with its active noise cancellation
+            feature.
           </p>
           <Link to={"/earphones/product1"}>
             <button
