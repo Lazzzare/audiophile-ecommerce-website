@@ -20,6 +20,8 @@ interface Props {
   XX99MarkIAmout: number;
   cartOverlay: boolean;
   setCartOverlay: (e: boolean) => void;
+  checkoutRoute: boolean;
+  setCheckoutRoute: (e: boolean) => void;
 }
 
 const Navbar = ({
@@ -31,6 +33,8 @@ const Navbar = ({
   addToCart,
   cartOverlay,
   setCartOverlay,
+  // checkoutRoute,
+  setCheckoutRoute,
 }: Props) => {
   return (
     <div className="bg-black">
@@ -40,19 +44,25 @@ const Navbar = ({
             onClick={() => setMobileMenu(false)}
             src={Close}
             alt="Close"
-            className="lg:hidden cursor-pointer z-30"
+            className="lg:hidden cursor-pointer z-[100]"
           />
         ) : (
           <img
             onClick={() => setMobileMenu(true)}
             src={Hamburger}
             alt="Hamburger"
-            className="lg:hidden cursor-pointer"
+            className="lg:hidden cursor-pointer z-[100]"
           />
         )}
         {/* MobileMenu */}
         {mobileMenu ? (
           <div className="absolute z-[100] top-0 left-0 right-0 bg-black w-full h-screen lg:hidden">
+            <img
+              onClick={() => setMobileMenu(false)}
+              src={Close}
+              alt="Close"
+              className="lg:hidden absolute top-9 left-6 cursor-pointer z-[100]"
+            />
             <div className="w-full h-[730px] bg-white mt-[90px] pt-[80px] md:pt-[200px] md:gap-20 md:px-5 rounded-b-2xl flex flex-col md:flex-row">
               {Products.map((product, index) => {
                 return (
@@ -81,6 +91,8 @@ const Navbar = ({
                         onClick={() => {
                           setMobileMenu(false);
                           setActiveMenuRoute(product.id);
+                          setCheckoutRoute(false);
+                          setCartOverlay(false);
                         }}
                         className="flex flex-col gap-y-4"
                       >
@@ -98,8 +110,17 @@ const Navbar = ({
             </div>
           </div>
         ) : null}
-        <Link to="/" onClick={() => setActiveMenuRoute(0)} className="z-[100]">
-          <img src={Logo} alt="Logo" className="cursor-pointer z-30" />
+        <Link
+          to={"/"}
+          onClick={() => {
+            setActiveMenuRoute(0);
+            setCheckoutRoute(false);
+            setCartOverlay(false);
+            setMobileMenu(false);
+          }}
+          className="z-[100]"
+        >
+          <img src={Logo} alt="Logo" className="cursor-pointer z-50" />
         </Link>
         <ul className="text-white z-[100] hidden lg:flex items-center gap-8">
           {menuListArray.map((item, index) => {
@@ -107,6 +128,8 @@ const Navbar = ({
               <li
                 onClick={() => {
                   setActiveMenuRoute(index);
+                  setCheckoutRoute(false);
+                  setCartOverlay(false);
                 }}
                 key={item.id}
                 className={`${
@@ -121,7 +144,10 @@ const Navbar = ({
         <div>
           <div
             className="relative z-[100] cursor-pointer"
-            onClick={() => setCartOverlay(!cartOverlay)}
+            onClick={() => {
+              setCartOverlay(!cartOverlay);
+              setMobileMenu(false);
+            }}
           >
             <img
               src={Cart}
