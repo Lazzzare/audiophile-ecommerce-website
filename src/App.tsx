@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Headphones from "./pages/Headphones";
 import Speakers from "./pages/Speakers";
 import Earphones from "./pages/Earphones";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FooterHero from "./components/FooterHero";
 import Footer from "./components/Footer";
 import HeadphoneFirstProduct from "./components/Headphones/HeadphoneFirstProduct";
@@ -17,8 +17,18 @@ import EarphoneWireless from "./components/Earphones/EarphoneWireless";
 const App = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [activeMenuRoute, setActiveMenuRoute] = useState<number>(0);
-  const [productAmount, setProductAmount] = useState<number>(0);
+  const [XX99MarkIIAmout, setXX99MarkIIAmout] = useState<number>(0);
+  const [XX99MarkIAmout, setXX99MarkIAmout] = useState<number>(0);
+  const [XX59MarkIAmout, setXX59MarkIAmout] = useState<number>(0);
+  const [productAmount, setProductAmount] = useState<number>(
+    XX99MarkIIAmout + XX99MarkIAmout + XX59MarkIAmout
+  );
   const [addToCart, setAddToCart] = useState(false);
+
+  useEffect(() => {
+    setProductAmount(XX99MarkIIAmout + XX99MarkIAmout + XX59MarkIAmout);
+  }, [XX99MarkIIAmout, XX99MarkIAmout, XX59MarkIAmout]);
+
   return (
     <div
       className={`w-full h-screen overflow-x-hidden ${
@@ -33,6 +43,8 @@ const App = () => {
         productAmount={productAmount}
         addToCart={addToCart}
         setAddToCart={setAddToCart}
+        XX99MarkIIAmout={XX99MarkIIAmout}
+        XX99MarkIAmout={XX99MarkIAmout}
       />
 
       <Routes>
@@ -56,6 +68,8 @@ const App = () => {
               productAmount={productAmount}
               setProductAmount={setProductAmount}
               setAddToCart={setAddToCart}
+              XX99MarkIIAmout={XX99MarkIIAmout}
+              setXX99MarkIIAmout={setXX99MarkIIAmout}
             />
           }
         ></Route>
@@ -67,6 +81,8 @@ const App = () => {
               productAmount={productAmount}
               setProductAmount={setProductAmount}
               setAddToCart={setAddToCart}
+              XX99MarkIAmout={XX99MarkIAmout}
+              setXX99MarkIAmout={setXX99MarkIAmout}
             />
           }
         ></Route>
@@ -76,6 +92,9 @@ const App = () => {
             <HeadphonesLastProduct
               setActiveMenuRoute={setActiveMenuRoute}
               productAmount={productAmount}
+              XX59MarkIAmout={XX59MarkIAmout}
+              setXX59MarkIAmout={setXX59MarkIAmout}
+              setAddToCart={setAddToCart}
             />
           }
         ></Route>
