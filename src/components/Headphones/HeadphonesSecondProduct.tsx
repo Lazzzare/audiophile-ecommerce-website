@@ -23,13 +23,17 @@ interface Props {
   productAmount: number;
   setProductAmount: (e: number) => void;
   setAddToCart: (e: boolean) => void;
+  XX99MarkIAmout: number;
+  setXX99MarkIAmout: (e: number) => void;
 }
 
 const HeadphonesSecondProduct = ({
   setActiveMenuRoute,
-  productAmount,
-  setProductAmount,
+  // productAmount,
+  // setProductAmount,
   setAddToCart,
+  XX99MarkIAmout,
+  setXX99MarkIAmout,
 }: Props) => {
   return (
     <div className="px-6 md:px-10 lg:px-0 pt-4 lg:pt-[80px] md:pt-10 lg:max-w-[1110px] lg:mx-auto">
@@ -80,20 +84,22 @@ const HeadphonesSecondProduct = ({
               <div className="flex flex-row justify-between p-[15px] w-[120px] bg-silver text-black text-[13px] font-bold tracking-[1px]">
                 <span
                   className="cursor-pointer opacity-50"
-                  onClick={() =>
-                    setProductAmount(
-                      productAmount === 0
-                        ? (productAmount = 0)
-                        : productAmount - 1
-                    )
-                  }
+                  onClick={() => {
+                    setXX99MarkIAmout(
+                      XX99MarkIAmout === 0
+                        ? (XX99MarkIAmout = 0)
+                        : XX99MarkIAmout - 1
+                    );
+                  }}
                 >
                   -
                 </span>
-                <h6>{productAmount}</h6>
+                <h6>{XX99MarkIAmout}</h6>
                 <span
                   className="cursor-pointer opacity-50"
-                  onClick={() => setProductAmount(productAmount + 1)}
+                  onClick={() => {
+                    setXX99MarkIAmout(XX99MarkIAmout + 1);
+                  }}
                 >
                   +
                 </span>
