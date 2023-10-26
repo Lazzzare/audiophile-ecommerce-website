@@ -170,6 +170,7 @@ const App = () => {
             />
           }
         ></Route>
+
         <Route
           path="/checkout"
           element={
