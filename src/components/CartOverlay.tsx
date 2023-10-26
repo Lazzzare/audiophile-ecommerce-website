@@ -356,7 +356,7 @@ const CartOverlay = ({
               {totalCost} $
             </h1>
           ) : (
-            <h1 className="text-black text-lg font-bold uppercase">0 $</h1>
+            "0 $"
           )}
         </div>
         <div className="mt-6">
