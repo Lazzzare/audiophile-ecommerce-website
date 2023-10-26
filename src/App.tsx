@@ -170,7 +170,23 @@ const App = () => {
             />
           }
         ></Route>
-        <Route path="/checkout" element={<Checkout />}></Route>
+        <Route
+          path="/checkout"
+          element={
+            <Checkout
+              productAmount={productAmount}
+              totalCost={totalCost}
+              XX99MarkIIAmout={XX99MarkIIAmout}
+              XX99MarkIAmout={XX99MarkIAmout}
+              XX59MarkIAmout={XX59MarkIAmout}
+              ZX9Amount={ZX9Amount}
+              ZX7Amount={ZX7Amount}
+              YX1Amount={YX1Amount}
+              activeMenuRoute={activeMenuRoute}
+              setActiveMenuRoute={setActiveMenuRoute}
+            />
+          }
+        ></Route>
       </Routes>
       {cartOverlay ? (
         <CartOverlay
