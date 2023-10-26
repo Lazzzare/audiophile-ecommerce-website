@@ -20,14 +20,31 @@ const App = () => {
   const [XX99MarkIIAmout, setXX99MarkIIAmout] = useState<number>(0);
   const [XX99MarkIAmout, setXX99MarkIAmout] = useState<number>(0);
   const [XX59MarkIAmout, setXX59MarkIAmout] = useState<number>(0);
+  const [ZX9Amount, setZX9Amount] = useState<number>(0);
+  const [ZX7Amount, setZX7Amount] = useState<number>(0);
+  const [YX1Amount, setYX1Amount] = useState<number>(0);
   const [productAmount, setProductAmount] = useState<number>(
     XX99MarkIIAmout + XX99MarkIAmout + XX59MarkIAmout
   );
   const [addToCart, setAddToCart] = useState(false);
 
   useEffect(() => {
-    setProductAmount(XX99MarkIIAmout + XX99MarkIAmout + XX59MarkIAmout);
-  }, [XX99MarkIIAmout, XX99MarkIAmout, XX59MarkIAmout]);
+    setProductAmount(
+      XX99MarkIIAmout +
+        XX99MarkIAmout +
+        XX59MarkIAmout +
+        ZX9Amount +
+        ZX7Amount +
+        YX1Amount
+    );
+  }, [
+    XX99MarkIIAmout,
+    XX99MarkIAmout,
+    XX59MarkIAmout,
+    ZX9Amount,
+    ZX7Amount,
+    YX1Amount,
+  ]);
 
   return (
     <div
@@ -107,6 +124,9 @@ const App = () => {
             <SpeakersFirstProduct
               setActiveMenuRoute={setActiveMenuRoute}
               productAmount={productAmount}
+              ZX9Amount={ZX9Amount}
+              setZX9Amount={setZX9Amount}
+              setaddToCart={setAddToCart}
             />
           }
         ></Route>
@@ -116,6 +136,9 @@ const App = () => {
             <SpeakersSecondProduct
               setActiveMenuRoute={setActiveMenuRoute}
               productAmount={productAmount}
+              ZX7Amount={ZX7Amount}
+              setZX7Amount={setZX7Amount}
+              setaddToCart={setAddToCart}
             />
           }
         ></Route>
@@ -127,6 +150,9 @@ const App = () => {
             <EarphoneWireless
               setActiveMenuRoute={setActiveMenuRoute}
               productAmount={productAmount}
+              YX1Amount={YX1Amount}
+              setYX1Amount={setYX1Amount}
+              setaddToCart={setAddToCart}
             />
           }
         ></Route>
