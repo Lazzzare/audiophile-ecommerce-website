@@ -16,6 +16,8 @@ interface Props {
   productAmount: number;
   addToCart: boolean;
   setAddToCart: (e: boolean) => void;
+  XX99MarkIIAmout: number;
+  XX99MarkIAmout: number;
 }
 
 const Navbar = ({
@@ -25,8 +27,12 @@ const Navbar = ({
   setActiveMenuRoute,
   productAmount,
   addToCart,
-}: // setAddToCart,
+}: // XX99MarkIIAmout,
+// XX99MarkIAmout,
+// setAddToCart,
 Props) => {
+  console.log(productAmount);
+
   return (
     <div className="bg-black">
       <div className="lg:max-w-[1440px] flex lg:mx-auto justify-between items-center bg-black px-6 md:px-[39px] lg:px-[165px] py-8 lg:py-9">
@@ -114,12 +120,18 @@ Props) => {
           })}
         </ul>
         <div>
-          {productAmount > 0 && addToCart === true ? (
-            <div className="absolute top-[20px] right-[408px] bg-orange text-whiteSmoke w-6 h-4 rounded-full flex justify-center font-bold items-center text-sm text-center">
-              <p>{productAmount}</p>
-            </div>
-          ) : null}
-          <img src={Cart} alt="Cart" className="cursor-pointer z-30" />
+          <div className="relative">
+            <img
+              src={Cart}
+              alt="Cart"
+              className="cursor-pointer z-30 relative"
+            />
+            {productAmount > 0 && addToCart === true ? (
+              <div className="absolute -top-4 left-1 bg-orange text-whiteSmoke w-6 h-4 rounded-full flex justify-center font-bold items-center text-sm text-center">
+                <p>{productAmount}</p>
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
       <div className="md:px-[39px] lg:px-[165px] lg:max-w-[1440px] lg:mx-auto">
