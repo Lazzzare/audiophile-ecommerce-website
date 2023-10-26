@@ -4,6 +4,7 @@ import XX59MK1 from "../images/cart/image-xx59-headphones.jpg";
 import ZX9 from "../images/cart/image-zx9-speaker.jpg";
 import ZX7 from "../images/cart/image-zx7-speaker.jpg";
 import YX1 from "../images/cart/image-yx1-earphones.jpg";
+import { Link } from "react-router-dom";
 // import { useState } from "react";
 
 interface Props {
@@ -25,6 +26,8 @@ interface Props {
   setZX7Amount: (e: number) => void;
   YX1Amount: number;
   setYX1Amount: (e: number) => void;
+  checkoutRoute: boolean;
+  setCheckoutRoute: (e: boolean) => void;
 }
 
 const CartOverlay = ({
@@ -44,6 +47,9 @@ const CartOverlay = ({
   setZX7Amount,
   YX1Amount,
   setYX1Amount,
+  // checkoutRoute,
+  setCheckoutRoute,
+  setCartOverlay,
 }: Props) => {
   const XX99MarkIIPrice = 2999;
   const XX99MarkIPrice = 1750;
@@ -352,6 +358,23 @@ const CartOverlay = ({
           ) : (
             <h1 className="text-black text-lg font-bold uppercase">0 $</h1>
           )}
+        </div>
+        <div className="mt-6">
+          <Link to={productAmount > 0 ? "/checkout" : "#"}>
+            <button
+              onClick={() => {
+                if (productAmount > 0) {
+                  setCartOverlay(false);
+                }
+                setCheckoutRoute(true);
+              }}
+              className={`text-white bg-orange hover-bg-lightOrange duration-500 py-[15px] w-full text-[13px] font-bold tracking-[1px] uppercase ${
+                productAmount > 0 ? "cursor-pointer" : ""
+              }`}
+            >
+              Checkout
+            </button>
+          </Link>
         </div>
       </div>
     </>
