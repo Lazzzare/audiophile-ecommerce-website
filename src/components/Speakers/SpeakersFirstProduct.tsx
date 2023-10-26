@@ -21,9 +21,18 @@ import ZX7SpeakerDesktop from "../../images/shared/desktop/image-zx7-speaker.jpg
 interface Props {
   setActiveMenuRoute: (e: number) => void;
   productAmount: number;
+  ZX9Amount: number;
+  setZX9Amount: (e: number) => void;
+  setaddToCart: (e: boolean) => void;
 }
 
-const SpeakersFirstProduct = ({ setActiveMenuRoute, productAmount }: Props) => {
+const SpeakersFirstProduct = ({
+  setActiveMenuRoute,
+  // productAmount,
+  ZX9Amount,
+  setZX9Amount,
+  setaddToCart,
+}: Props) => {
   return (
     <div className="px-6 md:px-10 lg:px-0 pt-4 lg:pt-[80px] md:pt-10 lg:max-w-[1110px] lg:mx-auto">
       <Link to={"/headphones"}>
@@ -71,11 +80,28 @@ const SpeakersFirstProduct = ({ setActiveMenuRoute, productAmount }: Props) => {
             </h4>
             <div className="flex flex-row gap-4">
               <div className="flex flex-row justify-between p-[15px] w-[120px] bg-silver text-black text-[13px] font-bold tracking-[1px]">
-                <span className="cursor-pointer opacity-50">-</span>
-                <h6>{productAmount}</h6>
-                <span className="cursor-pointer opacity-50">+</span>
+                <span
+                  className="cursor-pointer opacity-50"
+                  onClick={() => {
+                    setZX9Amount(
+                      ZX9Amount === 0 ? (ZX9Amount = 0) : ZX9Amount - 1
+                    );
+                  }}
+                >
+                  -
+                </span>
+                <h6>{ZX9Amount}</h6>
+                <span
+                  className="cursor-pointer opacity-50"
+                  onClick={() => setZX9Amount(ZX9Amount + 1)}
+                >
+                  +
+                </span>
               </div>
-              <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px] hover:bg-lightOrange duration-500">
+              <button
+                onClick={() => setaddToCart(true)}
+                className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px] hover:bg-lightOrange duration-500"
+              >
                 ADD TO CART
               </button>
             </div>
