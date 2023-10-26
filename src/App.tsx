@@ -13,9 +13,10 @@ import HeadphonesLastProduct from "./components/Headphones/HeadphonesLastProduct
 import SpeakersFirstProduct from "./components/Speakers/SpeakersFirstProduct";
 import SpeakersSecondProduct from "./components/Speakers/SpeakersSecondProduct";
 import EarphoneWireless from "./components/Earphones/EarphoneWireless";
+import CartOverlay from "./components/CartOverlay";
 
 const App = () => {
-  const [mobileMenu, setMobileMenu] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState<boolean>(false);
   const [activeMenuRoute, setActiveMenuRoute] = useState<number>(0);
   const [XX99MarkIIAmout, setXX99MarkIIAmout] = useState<number>(0);
   const [XX99MarkIAmout, setXX99MarkIAmout] = useState<number>(0);
@@ -26,7 +27,9 @@ const App = () => {
   const [productAmount, setProductAmount] = useState<number>(
     XX99MarkIIAmout + XX99MarkIAmout + XX59MarkIAmout
   );
-  const [addToCart, setAddToCart] = useState(false);
+  const [addToCart, setAddToCart] = useState<boolean>(false);
+  const [cartOverlay, setCartOverlay] = useState<boolean>(false);
+  const [totalCost, setTotalCost] = useState<number>(0);
 
   useEffect(() => {
     setProductAmount(
@@ -62,6 +65,8 @@ const App = () => {
         setAddToCart={setAddToCart}
         XX99MarkIIAmout={XX99MarkIIAmout}
         XX99MarkIAmout={XX99MarkIAmout}
+        cartOverlay={cartOverlay}
+        setCartOverlay={setCartOverlay}
       />
 
       <Routes>
@@ -157,6 +162,20 @@ const App = () => {
           }
         ></Route>
       </Routes>
+      {cartOverlay ? (
+        <CartOverlay
+          cartOverlay={cartOverlay}
+          setCartOverlay={setCartOverlay}
+          productAmount={productAmount}
+          setProductAmount={setProductAmount}
+          XX99MarkIIAmout={XX99MarkIIAmout}
+          addToCart={addToCart}
+          setXX99MarkIIAmout={setXX99MarkIIAmout}
+          totalCost={totalCost}
+          XX99MarkIAmout={XX99MarkIAmout}
+          setXX99MarkIAmout={setXX99MarkIAmout}
+        />
+      ) : null}
 
       <FooterHero
         activeMenuRoute={activeMenuRoute}
