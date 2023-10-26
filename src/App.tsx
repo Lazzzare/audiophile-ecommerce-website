@@ -25,11 +25,16 @@ const App = () => {
   const [ZX7Amount, setZX7Amount] = useState<number>(0);
   const [YX1Amount, setYX1Amount] = useState<number>(0);
   const [productAmount, setProductAmount] = useState<number>(
-    XX99MarkIIAmout + XX99MarkIAmout + XX59MarkIAmout
+    XX99MarkIIAmout +
+      XX99MarkIAmout +
+      XX59MarkIAmout +
+      ZX9Amount +
+      ZX7Amount +
+      YX1Amount
   );
   const [addToCart, setAddToCart] = useState<boolean>(false);
   const [cartOverlay, setCartOverlay] = useState<boolean>(false);
-  const [totalCost, setTotalCost] = useState<number>(0);
+  const [totalCost] = useState<number>(0);
 
   useEffect(() => {
     setProductAmount(
@@ -174,6 +179,14 @@ const App = () => {
           totalCost={totalCost}
           XX99MarkIAmout={XX99MarkIAmout}
           setXX99MarkIAmout={setXX99MarkIAmout}
+          XX59MarkIAmout={XX59MarkIAmout}
+          setXX59MarkIAmout={setXX59MarkIAmout}
+          ZX9Amount={ZX9Amount}
+          setZX9Amount={setZX9Amount}
+          ZX7Amount={ZX7Amount}
+          setZX7Amount={setZX7Amount}
+          YX1Amount={YX1Amount}
+          setYX1Amount={setYX1Amount}
         />
       ) : null}
 
