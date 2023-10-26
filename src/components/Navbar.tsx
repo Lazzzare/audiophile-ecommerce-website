@@ -18,6 +18,8 @@ interface Props {
   setAddToCart: (e: boolean) => void;
   XX99MarkIIAmout: number;
   XX99MarkIAmout: number;
+  cartOverlay: boolean;
+  setCartOverlay: (e: boolean) => void;
 }
 
 const Navbar = ({
@@ -27,15 +29,15 @@ const Navbar = ({
   setActiveMenuRoute,
   productAmount,
   addToCart,
+  cartOverlay,
+  setCartOverlay,
 }: // XX99MarkIIAmout,
 // XX99MarkIAmout,
 // setAddToCart,
 Props) => {
-  console.log(productAmount);
-
   return (
     <div className="bg-black">
-      <div className="lg:max-w-[1440px] flex lg:mx-auto justify-between items-center bg-black px-6 md:px-[39px] lg:px-[165px] py-8 lg:py-9">
+      <div className="lg:max-w-[1440px] z-[100] flex lg:mx-auto justify-between items-center bg-black px-6 md:px-[39px] lg:px-[165px] py-8 lg:py-9">
         {mobileMenu ? (
           <img
             onClick={() => setMobileMenu(false)}
@@ -53,7 +55,7 @@ Props) => {
         )}
         {/* MobileMenu */}
         {mobileMenu ? (
-          <div className="absolute z-20 top-0 left-0 right-0 bg-black w-full h-screen lg:hidden">
+          <div className="absolute z-[100] top-0 left-0 right-0 bg-black w-full h-screen lg:hidden">
             <div className="w-full h-[730px] bg-white mt-[90px] pt-[80px] md:pt-[200px] md:gap-20 md:px-5 rounded-b-2xl flex flex-col md:flex-row">
               {Products.map((product, index) => {
                 return (
@@ -99,10 +101,10 @@ Props) => {
             </div>
           </div>
         ) : null}
-        <Link to="/" onClick={() => setActiveMenuRoute(0)}>
+        <Link to="/" onClick={() => setActiveMenuRoute(0)} className="z-[100]">
           <img src={Logo} alt="Logo" className="cursor-pointer z-30" />
         </Link>
-        <ul className="text-white hidden lg:flex items-center gap-8">
+        <ul className="text-white z-[100] hidden lg:flex items-center gap-8">
           {menuListArray.map((item, index) => {
             return (
               <li
@@ -120,7 +122,10 @@ Props) => {
           })}
         </ul>
         <div>
-          <div className="relative">
+          <div
+            className="relative z-[100] cursor-pointer"
+            onClick={() => setCartOverlay(!cartOverlay)}
+          >
             <img
               src={Cart}
               alt="Cart"
