@@ -21,11 +21,17 @@ import ZX9SpeakerDesktop from "../../images/shared/desktop/image-zx9-speaker.jpg
 interface Props {
   setActiveMenuRoute: (e: number) => void;
   productAmount: number;
+  ZX7Amount: number;
+  setZX7Amount: (e: number) => void;
+  setaddToCart: (e: boolean) => void;
 }
 
 const SpeakersSecondProduct = ({
   setActiveMenuRoute,
   productAmount,
+  ZX7Amount,
+  setZX7Amount,
+  setaddToCart,
 }: Props) => {
   return (
     <div className="px-6 md:px-10 lg:px-0 pt-4 lg:pt-[80px] md:pt-10 lg:max-w-[1110px] lg:mx-auto">
@@ -73,11 +79,30 @@ const SpeakersSecondProduct = ({
             </h4>
             <div className="flex flex-row gap-4">
               <div className="flex flex-row justify-between p-[15px] w-[120px] bg-silver text-black text-[13px] font-bold tracking-[1px]">
-                <span className="cursor-pointer opacity-50">-</span>
+                <span
+                  className="cursor-pointer opacity-50"
+                  onClick={() => {
+                    setZX7Amount(
+                      ZX7Amount === 0 ? (ZX7Amount = 0) : ZX7Amount - 1
+                    );
+                  }}
+                >
+                  -
+                </span>
                 <h6>{productAmount}</h6>
-                <span className="cursor-pointer opacity-50">+</span>
+                <span
+                  className="cursor-pointer opacity-50"
+                  onClick={() => {
+                    setZX7Amount(ZX7Amount + 1);
+                  }}
+                >
+                  +
+                </span>
               </div>
-              <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px] hover:bg-lightOrange duration-500">
+              <button
+                onClick={() => setaddToCart(true)}
+                className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px] hover:bg-lightOrange duration-500"
+              >
                 ADD TO CART
               </button>
             </div>
