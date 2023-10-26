@@ -14,6 +14,7 @@ import SpeakersFirstProduct from "./components/Speakers/SpeakersFirstProduct";
 import SpeakersSecondProduct from "./components/Speakers/SpeakersSecondProduct";
 import EarphoneWireless from "./components/Earphones/EarphoneWireless";
 import CartOverlay from "./components/CartOverlay";
+import Checkout from "./components/Checkout/Checkout";
 
 const App = () => {
   const [mobileMenu, setMobileMenu] = useState<boolean>(false);
@@ -35,6 +36,7 @@ const App = () => {
   const [addToCart, setAddToCart] = useState<boolean>(false);
   const [cartOverlay, setCartOverlay] = useState<boolean>(false);
   const [totalCost] = useState<number>(0);
+  const [checkoutRoute, setCheckoutRoute] = useState<boolean>(false);
 
   useEffect(() => {
     setProductAmount(
@@ -56,7 +58,7 @@ const App = () => {
 
   return (
     <div
-      className={`w-full h-screen overflow-x-hidden ${
+      className={`w-full h-screen bg-[#FAFAFA] overflow-x-hidden ${
         mobileMenu ? "overflow-hidden" : "overflow-scroll"
       }`}
     >
@@ -72,6 +74,8 @@ const App = () => {
         XX99MarkIAmout={XX99MarkIAmout}
         cartOverlay={cartOverlay}
         setCartOverlay={setCartOverlay}
+        checkoutRoute={checkoutRoute}
+        setCheckoutRoute={setCheckoutRoute}
       />
 
       <Routes>
@@ -166,6 +170,7 @@ const App = () => {
             />
           }
         ></Route>
+        <Route path="/checkout" element={<Checkout />}></Route>
       </Routes>
       {cartOverlay ? (
         <CartOverlay
@@ -187,13 +192,22 @@ const App = () => {
           setZX7Amount={setZX7Amount}
           YX1Amount={YX1Amount}
           setYX1Amount={setYX1Amount}
+          checkoutRoute={checkoutRoute}
+          setCheckoutRoute={setCheckoutRoute}
         />
       ) : null}
 
-      <FooterHero
+      {checkoutRoute ? null : (
+        <FooterHero
+          activeMenuRoute={activeMenuRoute}
+          setActiveMenuRoute={setActiveMenuRoute}
+        />
+      )}
+
+      {/* <FooterHero
         activeMenuRoute={activeMenuRoute}
         setActiveMenuRoute={setActiveMenuRoute}
-      />
+      /> */}
       <Footer
         activeMenuRoute={activeMenuRoute}
         setActiveMenuRoute={setActiveMenuRoute}
