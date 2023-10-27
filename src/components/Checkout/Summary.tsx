@@ -14,6 +14,9 @@ interface Props {
   ZX9Amount: number;
   ZX7Amount: number;
   YX1Amount: number;
+  shipping: number;
+  vat: number;
+  grandTotal: number;
 }
 
 const Summary = ({
@@ -24,41 +27,10 @@ const Summary = ({
   ZX9Amount,
   ZX7Amount,
   YX1Amount,
+  shipping,
+  vat,
+  grandTotal,
 }: Props) => {
-  const XX99MarkIIPrice = 2999;
-  const XX99MarkIPrice = 1750;
-  const XX59MarkIPrice = 899;
-  const ZX9Price = 4500;
-  const ZX7Price = 3500;
-  const YX1Price = 599;
-
-  totalCost =
-    XX99MarkIIAmout * XX99MarkIIPrice +
-    XX99MarkIAmout * XX99MarkIPrice +
-    XX59MarkIAmout * XX59MarkIPrice +
-    ZX9Amount * ZX9Price +
-    ZX7Amount * ZX7Price +
-    YX1Amount * YX1Price;
-
-  let shipping = 10;
-  let vat = 75;
-
-  shipping =
-    shipping * XX99MarkIIAmout +
-    shipping * XX99MarkIAmout +
-    shipping * XX59MarkIAmout +
-    shipping * ZX9Amount +
-    shipping * ZX7Amount +
-    shipping * YX1Amount;
-
-  vat =
-    vat * XX99MarkIIAmout +
-    vat * XX99MarkIAmout +
-    vat * XX59MarkIAmout +
-    vat * ZX9Amount +
-    vat * ZX7Amount +
-    vat * YX1Amount;
-
   return (
     <div className="mt-8 mb-[10px] lg:mt-[85px] bg-white p-6">
       <h1 className="text-black text-lg font-bold tracking-[1.3px] uppercase">
@@ -198,7 +170,7 @@ const Summary = ({
               GRAND TOTAL
             </h1>
             <span className="text-orange text-lg font-bold uppercase">
-              $ {totalCost + shipping + vat}
+              $ {grandTotal}
             </span>
           </div>
         </div>
