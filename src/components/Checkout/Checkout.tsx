@@ -28,7 +28,6 @@ interface FormValues {
   zip: string;
   city: string;
   country: string;
-  // Add more fields as needed
 }
 
 const Checkout = ({
@@ -90,11 +89,48 @@ const Checkout = ({
     }
   };
 
-  console.log(popup);
-
   const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedOption(event.target.value);
   };
+  const XX99MarkIIPrice = 2999;
+  const XX99MarkIPrice = 1750;
+  const XX59MarkIPrice = 899;
+  const ZX9Price = 4500;
+  const ZX7Price = 3500;
+  const YX1Price = 599;
+
+  let shipping = 10;
+  let vat = 75;
+
+  totalCost =
+    XX99MarkIIAmout * XX99MarkIIPrice +
+    XX99MarkIAmout * XX99MarkIPrice +
+    XX59MarkIAmout * XX59MarkIPrice +
+    ZX9Amount * ZX9Price +
+    ZX7Amount * ZX7Price +
+    YX1Amount * YX1Price;
+
+  shipping =
+    shipping * XX99MarkIIAmout +
+    shipping * XX99MarkIAmout +
+    shipping * XX59MarkIAmout +
+    shipping * ZX9Amount +
+    shipping * ZX7Amount +
+    shipping * YX1Amount;
+
+  vat =
+    vat * XX99MarkIIAmout +
+    vat * XX99MarkIAmout +
+    vat * XX59MarkIAmout +
+    vat * ZX9Amount +
+    vat * ZX7Amount +
+    vat * YX1Amount;
+
+  const grandTotal = shipping + vat + totalCost;
+  console.log("ship", shipping, "vat", vat, "total", totalCost);
+
+  // console.log(grandTotal);
+
   return (
     <Formik
       initialValues={initialValues}
@@ -389,6 +425,9 @@ const Checkout = ({
                 ZX9Amount={ZX9Amount}
                 ZX7Amount={ZX7Amount}
                 YX1Amount={YX1Amount}
+                shipping={shipping}
+                vat={shipping}
+                grandTotal={grandTotal}
               />
               <button
                 type="submit"
@@ -412,6 +451,9 @@ const Checkout = ({
             ZX9Amount={ZX9Amount}
             ZX7Amount={ZX7Amount}
             YX1Amount={YX1Amount}
+            shipping={shipping}
+            vat={shipping}
+            grandTotal={grandTotal}
           />
         </form>
       )}
