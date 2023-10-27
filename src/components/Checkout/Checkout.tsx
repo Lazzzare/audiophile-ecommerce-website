@@ -92,15 +92,15 @@ const Checkout = ({
   const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedOption(event.target.value);
   };
+
+  const shipping = 10;
+  const vat = 75;
   const XX99MarkIIPrice = 2999;
   const XX99MarkIPrice = 1750;
   const XX59MarkIPrice = 899;
   const ZX9Price = 4500;
   const ZX7Price = 3500;
   const YX1Price = 599;
-
-  let shipping = 10;
-  let vat = 75;
 
   totalCost =
     XX99MarkIIAmout * XX99MarkIIPrice +
@@ -110,7 +110,7 @@ const Checkout = ({
     ZX7Amount * ZX7Price +
     YX1Amount * YX1Price;
 
-  shipping =
+  const shippingCost =
     shipping * XX99MarkIIAmout +
     shipping * XX99MarkIAmout +
     shipping * XX59MarkIAmout +
@@ -118,7 +118,8 @@ const Checkout = ({
     shipping * ZX7Amount +
     shipping * YX1Amount;
 
-  vat =
+  // Calculate VAT based on quantities
+  const vatCost =
     vat * XX99MarkIIAmout +
     vat * XX99MarkIAmout +
     vat * XX59MarkIAmout +
@@ -126,7 +127,7 @@ const Checkout = ({
     vat * ZX7Amount +
     vat * YX1Amount;
 
-  const grandTotal = shipping + vat + totalCost;
+  const grandTotal = shippingCost + vatCost + totalCost;
   console.log("ship", shipping, "vat", vat, "total", totalCost);
 
   // console.log(grandTotal);
@@ -428,6 +429,8 @@ const Checkout = ({
                 shipping={shipping}
                 vat={shipping}
                 grandTotal={grandTotal}
+                shippingCost={shippingCost}
+                vatCost={vatCost}
               />
               <button
                 type="submit"
@@ -452,7 +455,6 @@ const Checkout = ({
             ZX7Amount={ZX7Amount}
             YX1Amount={YX1Amount}
             shipping={shipping}
-            vat={shipping}
             grandTotal={grandTotal}
           />
         </form>
