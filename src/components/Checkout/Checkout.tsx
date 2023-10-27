@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Summary from "./Summary";
-import { Formik, Field, ErrorMessage, FormikHelpers } from "formik";
+import { Formik, Field, FormikHelpers } from "formik";
 import * as Yup from "yup";
+import Popup from "./Popup";
 
 interface Props {
   productAmount: number;
@@ -15,6 +16,8 @@ interface Props {
   YX1Amount: number;
   activeMenuRoute: number;
   setActiveMenuRoute: (e: number) => void;
+  popup: boolean;
+  setPopup: (e: boolean) => void;
 }
 
 interface FormValues {
@@ -37,7 +40,8 @@ const Checkout = ({
   ZX9Amount,
   ZX7Amount,
   YX1Amount,
-
+  popup,
+  setPopup,
   setActiveMenuRoute,
 }: Props) => {
   const initialValues: FormValues = {
@@ -62,16 +66,31 @@ const Checkout = ({
     city: Yup.string().required("City is required"),
     country: Yup.string().required("Country is required"),
   });
+  const [selectedOption, setSelectedOption] = useState("");
 
   const onSubmit = (
     values: FormValues,
     { setSubmitting }: FormikHelpers<FormValues>
   ) => {
-    // Handle form submission here
-    console.log(values);
-    setSubmitting(false);
+    if (
+      !values.name ||
+      !values.email ||
+      !values.phoneNumber ||
+      !values.address ||
+      !values.zip ||
+      !values.city ||
+      !values.country
+    ) {
+      // If any field is missing, do not show the popup
+      setSubmitting(false);
+    } else {
+      // If all fields are filled correctly, show the popup
+      setPopup(true);
+      setSubmitting(false);
+    }
   };
-  const [selectedOption, setSelectedOption] = useState("");
+
+  console.log(popup);
 
   const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedOption(event.target.value);
@@ -82,9 +101,11 @@ const Checkout = ({
       validationSchema={validationSchema}
       onSubmit={onSubmit}
     >
-      {({ isSubmitting, handleSubmit, errors, touched }) => (
+      {({ handleSubmit, errors, touched }) => (
         <form onSubmit={handleSubmit}>
-          <div className="w-full flex flex-col lg:flex-row lg:gap-8 md:px-10 lg:w-[930px] lg:mb-12 lg:mx-auto">
+          <div
+            className={`w-full flex flex-col lg:flex-row lg:gap-8 md:px-10 lg:w-[930px] lg:mb-12 lg:mx-auto`}
+          >
             <div className="flex flex-col">
               <Link to={"/"} onClick={() => setActiveMenuRoute(0)}>
                 <p
@@ -371,6 +392,9 @@ const Checkout = ({
               />
               <button
                 type="submit"
+                onClick={() => {
+                  window.scrollTo(0, 0); // Scroll to the top of the page
+                }}
                 className="mt-8 lg:mt-0 text-white text-[13px] mx-auto lg:mx-0 w-[284px] font-bold tracking-[1px] uppercase 
           lg:w-full bg-orange hover:bg-lightOrange duration-500 py-[15px]"
               >
@@ -378,6 +402,17 @@ const Checkout = ({
               </button>
             </div>
           </div>
+          <Popup
+            popup={popup}
+            productAmount={productAmount}
+            XX99MarkIIAmout={XX99MarkIIAmout}
+            totalCost={totalCost}
+            XX99MarkIAmout={XX99MarkIAmout}
+            XX59MarkIAmout={XX59MarkIAmout}
+            ZX9Amount={ZX9Amount}
+            ZX7Amount={ZX7Amount}
+            YX1Amount={YX1Amount}
+          />
         </form>
       )}
     </Formik>
