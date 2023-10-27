@@ -58,7 +58,7 @@ const App = () => {
 
   return (
     <div
-      className={`w-full h-screen bg-[#FAFAFA] overflow-x-hidden ${
+      className={`relative w-full h-screen bg-[#FAFAFA] overflow-x-hidden ${
         mobileMenu ? "overflow-hidden" : "overflow-scroll"
       }`}
     >
