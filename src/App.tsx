@@ -37,6 +37,7 @@ const App = () => {
   const [cartOverlay, setCartOverlay] = useState<boolean>(false);
   const [totalCost] = useState<number>(0);
   const [checkoutRoute, setCheckoutRoute] = useState<boolean>(false);
+  const [popup, setPopup] = useState(false);
 
   useEffect(() => {
     setProductAmount(
@@ -59,8 +60,8 @@ const App = () => {
   return (
     <div
       className={`relative w-full h-screen bg-[#FAFAFA] overflow-x-hidden ${
-        mobileMenu ? "overflow-hidden" : "overflow-scroll"
-      }`}
+        mobileMenu ? "overflow-y-hidden" : "overflow-scroll"
+      } ${popup ? "overflow-hidden h-full" : null}`}
     >
       <Navbar
         mobileMenu={mobileMenu}
@@ -185,6 +186,8 @@ const App = () => {
               YX1Amount={YX1Amount}
               activeMenuRoute={activeMenuRoute}
               setActiveMenuRoute={setActiveMenuRoute}
+              popup={popup}
+              setPopup={setPopup}
             />
           }
         ></Route>
