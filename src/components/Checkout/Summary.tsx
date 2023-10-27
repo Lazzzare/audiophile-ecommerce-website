@@ -60,7 +60,7 @@ const Summary = ({
     vat * YX1Amount;
 
   return (
-    <div className="mt-8 mb-[97px] lg:mt-[85px] bg-white p-6">
+    <div className="mt-8 mb-[10px] lg:mt-[85px] bg-white p-6">
       <h1 className="text-black text-lg font-bold tracking-[1.3px] uppercase">
         summary
       </h1>
@@ -201,9 +201,6 @@ const Summary = ({
               $ {totalCost + shipping + vat}
             </span>
           </div>
-          <button className="mt-8 text-white text-[13px] font-bold tracking-[1px] uppercase w-full bg-orange py-[15px]">
-            CONTINUE & PAY
-          </button>
         </div>
       </>
     </div>
