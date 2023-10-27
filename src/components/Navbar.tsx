@@ -38,7 +38,7 @@ const Navbar = ({
 }: Props) => {
   return (
     <div className="bg-black">
-      <div className="lg:max-w-[1440px] z-[100] flex lg:mx-auto justify-between items-center bg-black px-6 md:px-[39px] lg:px-[165px] py-8 lg:py-9">
+      <div className="lg:max-w-[1440px] lg:sticky lg:top-0 lg:right-0 lg:left-0 max-w-full z-[100] flex lg:mx-auto justify-between items-center bg-black px-6 md:px-[39px] lg:px-[165px] py-8 lg:py-9">
         {mobileMenu ? (
           <img
             onClick={() => setMobileMenu(false)}
