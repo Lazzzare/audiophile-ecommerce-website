@@ -17,6 +17,8 @@ interface Props {
   shipping: number;
   vat: number;
   grandTotal: number;
+  shippingCost: number;
+  vatCost: number;
 }
 
 const Summary = ({
@@ -27,9 +29,9 @@ const Summary = ({
   ZX9Amount,
   ZX7Amount,
   YX1Amount,
-  shipping,
-  vat,
   grandTotal,
+  shippingCost,
+  vatCost,
 }: Props) => {
   return (
     <div className="mt-8 mb-[10px] lg:mt-[85px] bg-white p-6">
@@ -154,7 +156,7 @@ const Summary = ({
               SHIPPING
             </h1>
             <span className="text-black text-lg font-bold uppercase">
-              $ {shipping}
+              $ {shippingCost}
             </span>
           </div>
           <div className="flex flex-row items-center justify-between">
@@ -162,7 +164,7 @@ const Summary = ({
               VAT (INCLUDED)
             </h1>
             <span className="text-black text-lg font-bold uppercase">
-              $ {vat}
+              $ {vatCost}
             </span>
           </div>
           <div className="flex flex-row items-center justify-between">
