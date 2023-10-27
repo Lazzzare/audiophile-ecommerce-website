@@ -61,7 +61,7 @@ const App = () => {
     <div
       className={`relative w-full h-screen bg-[#FAFAFA] overflow-x-hidden ${
         mobileMenu ? "overflow-y-hidden" : "overflow-scroll"
-      } ${popup ? "overflow-hidden h-full" : null}`}
+      }`}
     >
       <Navbar
         mobileMenu={mobileMenu}
@@ -228,10 +228,12 @@ const App = () => {
         activeMenuRoute={activeMenuRoute}
         setActiveMenuRoute={setActiveMenuRoute}
       /> */}
-      <Footer
-        activeMenuRoute={activeMenuRoute}
-        setActiveMenuRoute={setActiveMenuRoute}
-      />
+      <div className={`${popup ? "hidden" : "block"}`}>
+        <Footer
+          activeMenuRoute={activeMenuRoute}
+          setActiveMenuRoute={setActiveMenuRoute}
+        />
+      </div>
     </div>
   );
 };
