@@ -18,7 +18,6 @@ interface Props {
   ZX7Amount: number;
   YX1Amount: number;
   shipping: number;
-  vat: number;
   grandTotal: number;
 }
 
