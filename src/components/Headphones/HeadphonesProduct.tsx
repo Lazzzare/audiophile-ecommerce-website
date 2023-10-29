@@ -35,6 +35,12 @@ const products = [
 ];
 
 const HeadphonesProduct = () => {
+  const handleLinkClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="px-6 md:px-10 pt-16 lg:pt-[160px] lg:max-w-[1110px] lg:mx-auto lg:px-0">
       <div className="gap-[120px] lg:gap-[160px] mb-[120px] lg:mb-[200px] flex flex-col justify-center items-center text-center">
@@ -63,6 +69,7 @@ const HeadphonesProduct = () => {
                 </p>
                 <Link to={product.link}>
                   <button
+                    onClick={handleLinkClick}
                     className="py-[15px] w-[160px] bg-orange text-white text-[13px] tracking-[1px]
                   flex mx-auto text-center justify-center uppercase lg:mx-0 hover:bg-lightOrange duration-500"
                   >
