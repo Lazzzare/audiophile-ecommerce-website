@@ -13,6 +13,13 @@ interface Props {
 }
 
 const HomeProducts = ({ setActiveMenuRoute }: Props) => {
+  const handleLinkClick = () => {
+    // Scroll to the top when the link is clicked
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="p-6 space-y-6 flex flex-col mx-auto justify-center items-center">
       {/* First Speaker Product */}
@@ -44,8 +51,17 @@ const HomeProducts = ({ setActiveMenuRoute }: Props) => {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <Link to={"/speakers/product1"} onClick={() => setActiveMenuRoute(2)}>
-            <button className="text-white w-[160px] py-[15px] bg-black hover:bg-[#4C4C4C] duration-500 tracking-[1px] font-bold text-[13px] uppercase">
+          <Link
+            to={"/speakers/product1"}
+            onClick={() => {
+              setActiveMenuRoute(2);
+              handleLinkClick;
+            }}
+          >
+            <button
+              onClick={handleLinkClick}
+              className="text-white w-[160px] py-[15px] bg-black hover:bg-[#4C4C4C] duration-500 tracking-[1px] font-bold text-[13px] uppercase"
+            >
               See Product
             </button>
           </Link>
@@ -76,6 +92,7 @@ const HomeProducts = ({ setActiveMenuRoute }: Props) => {
           </h1>
           <Link to={"/speakers/product2"} onClick={() => setActiveMenuRoute(2)}>
             <button
+              onClick={handleLinkClick}
               className="bg-repeat-space  w-[160px] border-[1px] border-black text-black hover:bg-black hover:text-whiteSmoke duration-500 font-bold py-[15px]
             text-[13px] tracking-[1px] uppercase"
             >
@@ -117,6 +134,7 @@ const HomeProducts = ({ setActiveMenuRoute }: Props) => {
             onClick={() => setActiveMenuRoute(3)}
           >
             <button
+              onClick={handleLinkClick}
               className="bg-repeat-space border-[1px] border-black w-[160px] text-black hover:bg-black hover:text-whiteSmoke duration-500 font-bold py-[15px]
             text-[13px] tracking-[1px] uppercase"
             >
