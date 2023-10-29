@@ -33,6 +33,12 @@ const HeadphonesLastProduct = ({
   setXX59MarkIAmout,
   setAddToCart,
 }: Props) => {
+  const handleLinkClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="px-6 md:px-10 lg:px-0 pt-4 lg:pt-[80px] md:pt-10 lg:max-w-[1110px] lg:mx-auto">
       <Link to={"/headphones"}>
@@ -236,7 +242,10 @@ const HeadphonesLastProduct = ({
               XX99 MARK II
             </h1>
             <Link to={"/headphones/product1"}>
-              <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
+              <button
+                onClick={handleLinkClick}
+                className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]"
+              >
                 See Product
               </button>
             </Link>
@@ -261,7 +270,10 @@ const HeadphonesLastProduct = ({
               XX99 MARK I
             </h1>
             <Link to={"/headphones/product2"}>
-              <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
+              <button
+                onClick={handleLinkClick}
+                className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]"
+              >
                 See Product
               </button>
             </Link>
@@ -289,7 +301,10 @@ const HeadphonesLastProduct = ({
               to={"/speakers/product1"}
               onClick={() => setActiveMenuRoute(2)}
             >
-              <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
+              <button
+                onClick={handleLinkClick}
+                className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]"
+              >
                 See Product
               </button>
             </Link>
