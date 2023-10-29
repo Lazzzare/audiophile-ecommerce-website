@@ -6,6 +6,12 @@ interface Props {
 }
 
 const HomeHero = ({ setActiveMenuRoute }: Props) => {
+  const handleLinkClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="bg-black">
       <div className="lg:max-w-[1440px] lg:mx-auto bg-black flex flex-row justify-between lg:px-[165px]">
@@ -25,7 +31,10 @@ const HomeHero = ({ setActiveMenuRoute }: Props) => {
               to={"/headphones/product1"}
               onClick={() => setActiveMenuRoute(1)}
             >
-              <button className="w-[160px] flex lg:mx-0 justify-center items-center text-center mx-auto py-[15px] px-7 bg-orange hover:bg-lightOrange duration-500 text-[13px] tracking-[1px] font-bold uppercase">
+              <button
+                onClick={handleLinkClick}
+                className="w-[160px] flex lg:mx-0 justify-center items-center text-center mx-auto py-[15px] px-7 bg-orange hover:bg-lightOrange duration-500 text-[13px] tracking-[1px] font-bold uppercase"
+              >
                 See Product
               </button>
             </Link>
