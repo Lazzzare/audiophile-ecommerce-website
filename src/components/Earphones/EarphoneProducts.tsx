@@ -3,6 +3,12 @@ import YX1Desktop from "../../images/product-yx1-earphones/desktop/image-product
 import { Link } from "react-router-dom";
 
 const EarphoneProducts = () => {
+  const handleLinkClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="px-6 md:px-10 pt-16 lg:pt-[160px] lg:max-w-[1110px] lg:mx-auto lg:px-0">
       <div className="mx-auto flex flex-col lg:flex-row lg:gap-x-[125px] lg:text-start lg:justify-start justify-center text-center items-center">
@@ -28,6 +34,7 @@ const EarphoneProducts = () => {
           </p>
           <Link to={"/earphones/product1"}>
             <button
+              onClick={handleLinkClick}
               className="text-white text-[13px] bg-orange py-[15px] w-[160px] mx-auto flex justify-center
             lg:mx-0 font-bold tracking-[1px] uppercase"
             >
