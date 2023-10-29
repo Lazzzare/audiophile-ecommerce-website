@@ -113,7 +113,7 @@ const Popup = ({
                       />
                       <div>
                         <h1 className="text-black text-[15px] font-bold leading-[25px]">
-                          XX59 Headphones
+                          XX59 MK1
                         </h1>
                         <h2 className="text-black opacity-50 font-bold text-[14px] leading-[25px]">
                           $ 899
