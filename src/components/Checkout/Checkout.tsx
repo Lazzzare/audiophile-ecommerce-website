@@ -51,7 +51,6 @@ const Checkout = ({
     zip: "",
     city: "",
     country: "",
-    // Add more fields as needed
   };
 
   const validationSchema = Yup.object().shape({
