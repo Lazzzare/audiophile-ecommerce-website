@@ -6,6 +6,12 @@ import ZX9SpeakerDesktop from "../../images/product-zx9-speaker/desktop/image-pr
 import { Link } from "react-router-dom";
 
 const SpeakersProduct = () => {
+  const handleLinkClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="px-6 md:px-10 flex flex-col gap-y-[120px] mb-[120px] lg:mb-[155px] pt-16 lg:pt-[160px] lg:max-w-[1110px] mx-auto lg:px-0">
       {/* First Second */}
@@ -76,6 +82,7 @@ const SpeakersProduct = () => {
           </p>
           <Link to={"/speakers/product2"}>
             <button
+              onClick={handleLinkClick}
               className="text-white text-[13px] bg-orange py-[15px] w-[160px] mx-auto flex  
             justify-center lg:mx-0 font-bold tracking-[1px] uppercase"
             >
