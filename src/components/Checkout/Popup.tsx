@@ -42,7 +42,7 @@ const Popup = ({
         <>
           <div className="overflow-y-hidden w-full h-[250vh] lg:h-[140vh] absolute top-0 left-0 right-0 bg-black opacity-40 z-[900]"></div>
           <div className="w-full h-screen overflow-hidden flex flex-col px-6 absolute top-0 left-0 right-0 items-center z-[1000] justify-center">
-            <div className="p-8 flex flex-col z-[800] opacity-100 bg-white rounded-lg">
+            <div className="p-8 lg:p-12 flex flex-col z-[800] opacity-100 bg-white rounded-lg">
               <img
                 src={CompleteLogo}
                 alt="CompleteLogo"
