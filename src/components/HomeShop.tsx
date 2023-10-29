@@ -10,7 +10,6 @@ interface Props {
 
 const HomeShop = ({ setActiveMenuRoute }: Props) => {
   const handleLinkClick = () => {
-    // Scroll to the top when the link is clicked
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -24,6 +23,7 @@ const HomeShop = ({ setActiveMenuRoute }: Props) => {
             key={index}
             onClick={() => {
               setActiveMenuRoute(product.id);
+              // handleLinkClick;
             }}
             to={product.link}
             className="w-[327px] h-[165px] md:w-[223px] lg:w-[350px] lg:h-[204px] rounded-lg bg-silver mx-auto flex flex-col items-center justify-center cursor-pointer"
