@@ -11,6 +11,12 @@ interface Props {
 }
 
 const Footer = ({ activeMenuRoute, setActiveMenuRoute }: Props) => {
+  const handleLinkClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="bg-black">
       <div className="relative bg-black px-6 md:px-10 lg:max-w-[1110px] pt-[52px] pb-[38px] flex flex-col mx-auto gap-y-10 md:gap-y-8">
@@ -21,7 +27,7 @@ const Footer = ({ activeMenuRoute, setActiveMenuRoute }: Props) => {
           {/* Rectangle */}
           <div className="absolute top-[0.5px] left-0 right-0 w-[101px] h-1 bg-orange mx-auto md:mx-0 md:left-[40px]"></div>
           {/* MenuItems */}
-          <div className="">
+          <div className="" onClick={handleLinkClick}>
             <ul className="text-white flex flex-col md:flex-row items-center md:items-stretch gap-4">
               {menuListArray.map((item, index) => {
                 return (
