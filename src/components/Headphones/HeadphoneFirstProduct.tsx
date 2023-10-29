@@ -107,12 +107,16 @@ const HeadphoneFirstProduct = ({
                   +
                 </span>
               </div>
-              <button
-                onClick={() => setAddToCart(true)}
-                className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px] hover:bg-lightOrange duration-500"
-              >
-                ADD TO CART
-              </button>
+              <div onClick={handleLinkClick}>
+                <button
+                  onClick={() => {
+                    setAddToCart(true);
+                  }}
+                  className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px] hover:bg-lightOrange duration-500"
+                >
+                  ADD TO CART
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -250,12 +254,14 @@ const HeadphoneFirstProduct = ({
               XX99 MARK I
             </h1>
             <Link to={"/headphones/product2"}>
-              <button
-                onClick={handleLinkClick}
-                className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]"
-              >
-                See Product
-              </button>
+              <div onClick={handleLinkClick}>
+                <button
+                  onClick={handleLinkClick}
+                  className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]"
+                >
+                  See Product
+                </button>
+              </div>
             </Link>
           </div>
           <div className="flex flex-col gap-8 justify-center items-center">
