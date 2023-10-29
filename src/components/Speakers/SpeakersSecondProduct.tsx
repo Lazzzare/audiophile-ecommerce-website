@@ -33,6 +33,12 @@ const SpeakersSecondProduct = ({
   setZX7Amount,
   setaddToCart,
 }: Props) => {
+  const handleLinkClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="px-6 md:px-10 lg:px-0 pt-4 lg:pt-[80px] md:pt-10 lg:max-w-[1110px] lg:mx-auto">
       <Link to={"/headphones"}>
@@ -89,7 +95,7 @@ const SpeakersSecondProduct = ({
                 >
                   -
                 </span>
-                <h6>{productAmount}</h6>
+                <h6>{ZX7Amount}</h6>
                 <span
                   className="cursor-pointer opacity-50"
                   onClick={() => {
@@ -101,7 +107,8 @@ const SpeakersSecondProduct = ({
               </div>
               <button
                 onClick={() => setaddToCart(true)}
-                className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px] hover:bg-lightOrange duration-500"
+                className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange 
+                w-[160px] py-[15px] hover:bg-lightOrange duration-500"
               >
                 ADD TO CART
               </button>
@@ -245,7 +252,10 @@ const SpeakersSecondProduct = ({
               to={"/headphones/product2"}
               onClick={() => setActiveMenuRoute(1)}
             >
-              <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
+              <button
+                onCanPlay={handleLinkClick}
+                className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]"
+              >
                 See Product
               </button>
             </Link>
@@ -273,7 +283,10 @@ const SpeakersSecondProduct = ({
               to={"/headphones/product3"}
               onClick={() => setActiveMenuRoute(1)}
             >
-              <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
+              <button
+                onClick={handleLinkClick}
+                className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]"
+              >
                 See Product
               </button>
             </Link>
@@ -298,7 +311,10 @@ const SpeakersSecondProduct = ({
               ZX9 SPEAKER
             </h1>
             <Link to={"/speakers/product1"}>
-              <button className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]">
+              <button
+                onClick={handleLinkClick}
+                className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px]"
+              >
                 See Product
               </button>
             </Link>
