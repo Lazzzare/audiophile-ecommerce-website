@@ -28,7 +28,7 @@ interface Props {
 
 const SpeakersSecondProduct = ({
   setActiveMenuRoute,
-  productAmount,
+  // productAmount,
   ZX7Amount,
   setZX7Amount,
   setaddToCart,
