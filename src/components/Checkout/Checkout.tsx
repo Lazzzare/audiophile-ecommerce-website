@@ -66,6 +66,13 @@ const Checkout = ({
   });
   const [selectedOption, setSelectedOption] = useState("");
 
+  const handleLinkClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   const onSubmit = (
     values: FormValues,
     { setSubmitting }: FormikHelpers<FormValues>
@@ -433,9 +440,7 @@ const Checkout = ({
               />
               <button
                 type="submit"
-                onClick={() => {
-                  window.scrollTo(0, 0);
-                }}
+                onClick={handleLinkClick}
                 className="mt-8 lg:mt-0 text-white text-[13px] mx-auto lg:mx-0 w-[284px] font-bold tracking-[1px] uppercase 
           lg:w-full bg-orange hover:bg-lightOrange duration-500 py-[15px]"
               >
