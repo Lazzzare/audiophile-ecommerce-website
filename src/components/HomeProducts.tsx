@@ -14,7 +14,7 @@ interface Props {
 
 const HomeProducts = ({ setActiveMenuRoute }: Props) => {
   const handleLinkClick = () => {
-    window.scrollTo({
+    document.documentElement.scrollTo({
       top: 0,
       behavior: "smooth",
     });
@@ -50,8 +50,8 @@ const HomeProducts = ({ setActiveMenuRoute }: Props) => {
           <Link
             to="/speakers/product1"
             onClick={() => {
-              setActiveMenuRoute(2);
               handleLinkClick();
+              setActiveMenuRoute(2);
             }}
           >
             <button className="text-white w-[160px] py-[15px] bg-black hover:bg-[#4C4C4C] duration-500 tracking-[1px] font-bold text-[13px] uppercase">
@@ -81,11 +81,12 @@ const HomeProducts = ({ setActiveMenuRoute }: Props) => {
           <h1 className="text-black text-[28px] font-bold tracking-[2px]">
             ZX7 SPEAKER
           </h1>
+
           <Link
             to="/speakers/product2"
             onClick={() => {
-              setActiveMenuRoute(2);
               handleLinkClick();
+              setActiveMenuRoute(2);
             }}
           >
             <button className="bg-repeat-space  w-[160px] border-[1px] border-black text-black hover:bg-black hover:text-whiteSmoke duration-500 font-bold py-[15px] text-[13px] tracking-[1px] uppercase">
@@ -120,8 +121,8 @@ const HomeProducts = ({ setActiveMenuRoute }: Props) => {
           <Link
             to="/earphones/product1"
             onClick={() => {
-              setActiveMenuRoute(3);
               handleLinkClick();
+              setActiveMenuRoute(3);
             }}
           >
             <button className="bg-repeat-space border-[1px] border-black w-[160px] text-black hover:bg-black hover:text-whiteSmoke duration-500 font-bold py-[15px] text-[13px] tracking-[1px] uppercase">

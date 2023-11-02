@@ -67,7 +67,7 @@ const Checkout = ({
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleLinkClick = () => {
-    window.scrollTo({
+    document.documentElement.scrollTo({
       top: 0,
       behavior: "smooth",
     });
@@ -438,14 +438,19 @@ const Checkout = ({
                 shippingCost={shippingCost}
                 vatCost={vatCost}
               />
-              <button
-                type="submit"
-                onClick={handleLinkClick}
-                className="mt-8 lg:mt-0 text-white text-[13px] mx-auto lg:mx-0 w-[284px] font-bold tracking-[1px] uppercase 
-          lg:w-full bg-orange hover:bg-lightOrange duration-500 py-[15px]"
+              <div
+                className="mx-auto flex justify-center lg:mx-0 lg:block lg:justify-normal"
+                onClick={() => handleLinkClick()}
               >
-                CONTINUE & PAY
-              </button>
+                <button
+                  type="submit"
+                  onClick={() => handleLinkClick()}
+                  className="mt-8 lg:mt-0 justify-center items-center text-white text-[13px] mx-auto lg:mx-0 w-[284px] font-bold tracking-[1px] uppercase 
+          lg:w-full bg-orange hover:bg-lightOrange duration-500 py-[15px]"
+                >
+                  CONTINUE & PAY
+                </button>
+              </div>
             </div>
           </div>
           <Popup
