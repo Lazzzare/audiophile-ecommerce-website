@@ -35,6 +35,8 @@ const HeadphonesSecondProduct = ({
   XX99MarkIAmout,
   setXX99MarkIAmout,
 }: Props) => {
+  console.log(XX99MarkIAmout);
+
   const handleLinkClick = () => {
     window.scrollTo({
       top: 0,
@@ -111,7 +113,11 @@ const HeadphonesSecondProduct = ({
                 </span>
               </div>
               <button
-                onClick={() => setAddToCart(true)}
+                onClick={() => {
+                  if (XX99MarkIAmout > 0) {
+                    setAddToCart(true);
+                  }
+                }}
                 className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px] hover:bg-lightOrange duration-500"
               >
                 ADD TO CART

@@ -108,7 +108,11 @@ const HeadphonesLastProduct = ({
                 </span>
               </div>
               <button
-                onClick={() => setAddToCart(true)}
+                onClick={() => {
+                  if (XX59MarkIAmout > 0) {
+                    setAddToCart(true);
+                  }
+                }}
                 className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px] hover:bg-lightOrange duration-500"
               >
                 ADD TO CART

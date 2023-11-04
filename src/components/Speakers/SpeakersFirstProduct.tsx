@@ -105,7 +105,11 @@ const SpeakersFirstProduct = ({
                 </span>
               </div>
               <button
-                onClick={() => setaddToCart(true)}
+                onClick={() => {
+                  if (ZX9Amount > 0) {
+                    setaddToCart(true);
+                  }
+                }}
                 className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px] hover:bg-lightOrange duration-500"
               >
                 ADD TO CART

@@ -22,6 +22,7 @@ interface Props {
   setActiveMenuRoute: (e: number) => void;
   productAmount: number;
   setProductAmount: (e: number) => void;
+  // addToCart: boolean;
   setAddToCart: (e: boolean) => void;
   XX99MarkIIAmout: number;
   setXX99MarkIIAmout: (e: number) => void;
@@ -110,7 +111,9 @@ const HeadphoneFirstProduct = ({
               <div onClick={handleLinkClick}>
                 <button
                   onClick={() => {
-                    setAddToCart(true);
+                    if (XX99MarkIIAmout > 0) {
+                      setAddToCart(true);
+                    }
                   }}
                   className="text-white text-[13px] font-bold tracking-[1px] uppercase bg-orange w-[160px] py-[15px] hover:bg-lightOrange duration-500"
                 >
