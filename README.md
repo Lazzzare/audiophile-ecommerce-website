@@ -37,7 +37,7 @@ I'm thrilled to share with you all the results of countless hours of hard work a
 
 # Getting Started
 
-![.gif](./src/images/gif.gif);
+![.gif](./src/images/gif.gif)
 
 1. First of all you need to clone app repository from github:
 
